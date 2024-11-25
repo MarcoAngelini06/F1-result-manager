@@ -28,4 +28,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="nPitsops" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="0cb09510-e580-416b-b78b-2fb63ecc45f6" ChangeDateTime="11/25/2024 14:32:51">
+    <Property Name="ElementName" Value="[dbo].[DriverTeam].[Season]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DriverTeam]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CarSeason" />
+  </Operation>
 </Operations>
