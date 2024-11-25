@@ -1,0 +1,27 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Rename
+       [dbo].[Drivers].[surname] (Column)
+     Create
+       [dbo].[Car] (Table)
+       [dbo].[CarSeason] (Table)
+       [dbo].[DriverTeam] (Table)
+       [dbo].[RaceResult] (Table)
+       [dbo].[Races] (Table)
+       [dbo].[Results] (Table)
+       [dbo].[Season] (Table)
+       [dbo].[Tracks] (Table)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+

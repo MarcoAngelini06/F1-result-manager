@@ -4,3 +4,13 @@ C:\Users\stage\Desktop\F1\F1\bin\Debug\DBParrucchiera.pdb
 C:\Users\stage\Desktop\F1\F1\obj\Debug\F1.sqlproj.AssemblyReference.cache
 C:\Users\stage\Desktop\F1\F1\obj\Debug\DBParrucchiera.dll
 C:\Users\stage\Desktop\F1\F1\obj\Debug\DBParrucchiera.pdb
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\bin\Debug\F1.dacpac
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\bin\Debug\DBParrucchiera.dll
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\bin\Debug\DBParrucchiera.pdb
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\F1.sqlproj.AssemblyReference.cache
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\Model.xml
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\refactor.xml
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\postdeploy.sql
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\predeploy.sql
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\DBParrucchiera.dll
+C:\Users\stage\Desktop\F1\F1-result-manager\F1\obj\Debug\DBParrucchiera.pdb

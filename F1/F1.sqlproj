@@ -69,5 +69,16 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Drivers.sql" />
     <Build Include="dbo\Tables\Teams.sql" />
+    <Build Include="dbo\Tables\DriverTeam.sql" />
+    <Build Include="dbo\Tables\Car.sql" />
+    <Build Include="dbo\Tables\Season.sql" />
+    <Build Include="dbo\Tables\CarSeason.sql" />
+    <Build Include="dbo\Tables\Tracks.sql" />
+    <Build Include="dbo\Tables\Races.sql" />
+    <Build Include="dbo\Tables\Results.sql" />
+    <Build Include="dbo\Tables\RaceResult.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="F1.refactorlog" />
   </ItemGroup>
 </Project>
