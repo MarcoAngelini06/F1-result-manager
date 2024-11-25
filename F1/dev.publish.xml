@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <IncludeCompositeObjects>True</IncludeCompositeObjects>
+        <TargetDatabaseName>F1</TargetDatabaseName>
+        <DeployScriptFileName>F1.sql</DeployScriptFileName>
+        <TargetConnectionString>Data Source=localhost;Initial Catalog=F1;uid=sa; password=Isolutions2021;Encrypt=False</TargetConnectionString>
+        <ProfileVersionNumber>1</ProfileVersionNumber>
+        <ScriptDatabaseOptions>True</ScriptDatabaseOptions>
+        <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
+        <IncludeTransactionalScripts>True</IncludeTransactionalScripts>
+        <CreateNewDatabase>False</CreateNewDatabase>
+    </PropertyGroup>
+    <ItemGroup>
+        <SqlCmdVariable Include="F1">
+            <Value>F1</Value>
+        </SqlCmdVariable>
+    </ItemGroup>
+</Project>

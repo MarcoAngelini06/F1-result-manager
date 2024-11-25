@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[servizi]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column prezzo in table [dbo].[servizi] is currently  NTEXT NOT NULL but is being changed to  INT NOT NULL.
+         There is no implicit or explicit conversion.
+
+** User actions
+     Recreate table
+       [dbo].[servizi] (Table)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: Parrucchiera.
+The type for column prezzo in table [dbo].[servizi] is currently  NTEXT NOT NULL but is being changed to  INT NOT NULL. There is no implicit or explicit conversion.
+

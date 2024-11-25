@@ -1,0 +1,9 @@
+CREATE DATABASE F1
+GO
+
+CREATE TABLE dbo.Drivers 
+(
+	[Id] INT IDENTITY (1,1) ,
+	[Name] VARCHAR(500),
+	[Surname] VARCHAR(500)
+)

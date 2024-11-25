@@ -1,0 +1,6 @@
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\bin\Debug\Database1.dacpac
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\bin\Debug\Database1.dll
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\bin\Debug\Database1.pdb
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\obj\Debug\Database1.sqlproj.AssemblyReference.cache
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\obj\Debug\Database1.dll
+C:\Users\stage\Desktop\gestionale parruchiere\gestionale2.0\db\Database1\Database1\obj\Debug\Database1.pdb

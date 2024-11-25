@@ -1,0 +1,10 @@
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\bin\Debug\PARRUCCHIERA.dacpac
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\bin\Debug\DBParrucchiera.dll
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\bin\Debug\DBParrucchiera.pdb
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\PARRUCCHIERA.sqlproj.AssemblyReference.cache
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\Model.xml
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\refactor.xml
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\postdeploy.sql
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\predeploy.sql
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\DBParrucchiera.dll
+D:\Projects\gestionale2.0\db\DBParrucchiera\Database1\obj\Debug\DBParrucchiera.pdb
