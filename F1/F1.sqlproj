@@ -71,7 +71,7 @@
     <Build Include="dbo\Tables\Teams.sql" />
     <Build Include="dbo\Tables\DriverTeam.sql" />
     <Build Include="dbo\Tables\Car.sql" />
-    <Build Include="dbo\Tables\Season.sql" />
+    <Build Include="dbo\Tables\Seasons.sql" />
     <Build Include="dbo\Tables\CarSeason.sql" />
     <Build Include="dbo\Tables\Tracks.sql" />
     <Build Include="dbo\Tables\Races.sql" />
