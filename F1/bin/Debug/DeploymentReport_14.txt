@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       unnamed constraint on [dbo].[DriverTeam]
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[DriverTeam].[Id] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[DriverTeam] (Primary Key)
+     Alter
+       [dbo].[DriverTeam] (Table)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+The column [dbo].[DriverTeam].[Id] is being dropped, data loss could occur.
+

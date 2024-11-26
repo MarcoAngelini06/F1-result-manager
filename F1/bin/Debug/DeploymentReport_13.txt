@@ -1,0 +1,24 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[Drivers]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[DriverTeam] (Foreign Key)
+     Recreate table
+       [dbo].[Drivers] (Table)
+     Alter
+       [dbo].[Tracks] (Table)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[DriverTeam] (Foreign Key)
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+

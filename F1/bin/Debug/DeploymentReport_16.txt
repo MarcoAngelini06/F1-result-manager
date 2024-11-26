@@ -1,0 +1,49 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[Car]
+       [dbo].[CarSeason]
+       [dbo].[RaceResult]
+       [dbo].[Races]
+       [dbo].[Results]
+       [dbo].[Season]
+       [dbo].[Teams]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       unnamed constraint on [dbo].[Races] (Foreign Key)
+       unnamed constraint on [dbo].[Races] (Foreign Key)
+     Recreate table
+       [dbo].[Car] (Table)
+       [dbo].[CarSeason] (Table)
+       [dbo].[RaceResult] (Table)
+       [dbo].[Races] (Table)
+       [dbo].[Results] (Table)
+       [dbo].[Season] (Table)
+       [dbo].[Teams] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_DriverTeam_Season_Id] (Foreign Key)
+       [dbo].[FK_DriverTeam_Teams_Team] (Foreign Key)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       [dbo].[FK_DriverTeam_Season_Id] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Races] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Races] (Foreign Key)
+       [dbo].[FK_DriverTeam_Teams_Team] (Foreign Key)
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+

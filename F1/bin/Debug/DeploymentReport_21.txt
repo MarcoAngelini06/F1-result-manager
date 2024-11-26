@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[DriverTeam]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Recreate table
+       [dbo].[DriverTeam] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_DriverTeam_Teams_Team] (Foreign Key)
+       [dbo].[FK_DriverTeam_Drivers_Id] (Foreign Key)
+       [dbo].[FK_DriverTeam_Season_Id] (Foreign Key)
+     Create
+       [dbo].[FK_DriverTeam_Teams_Team] (Foreign Key)
+       [dbo].[FK_DriverTeam_Drivers_Id] (Foreign Key)
+       [dbo].[FK_DriverTeam_Season_Id] (Foreign Key)
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+

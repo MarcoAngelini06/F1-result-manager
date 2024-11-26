@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[DriverTeam]
 (
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Team] INT NULL, 
     [Driver] INT NULL, 
     [CarSeason] INT NULL

@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       unnamed constraint on [dbo].[CarSeason] (Foreign Key)
+       unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       unnamed constraint on [dbo].[RaceResult] (Foreign Key)
+       unnamed constraint on [dbo].[Races] (Foreign Key)
+       unnamed constraint on [dbo].[Races] (Foreign Key)
+     Create
+       [dbo].[FK_CarSeason_Car_Id] (Foreign Key)
+       [dbo].[FK_CarSeason_Season_Id] (Foreign Key)
+       [dbo].[FK_RaceResult_Races_Id] (Foreign Key)
+       [dbo].[FK_RaceResult_Results_Id] (Foreign Key)
+       [dbo].[FK_Races_Season_Id] (Foreign Key)
+       [dbo].[FK_Races_Tracks_Id] (Foreign Key)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+
