@@ -22,6 +22,10 @@ namespace F1WebSite.Controllers
         {
             return View();
         }
+        public IActionResult Teams()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

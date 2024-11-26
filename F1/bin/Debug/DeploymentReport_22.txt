@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[Tracks]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Recreate table
+       [dbo].[Tracks] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Races_Tracks_Id] (Foreign Key)
+     Create
+       [dbo].[FK_Races_Tracks_Id] (Foreign Key)
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+
