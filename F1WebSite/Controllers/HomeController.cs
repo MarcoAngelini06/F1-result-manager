@@ -40,6 +40,7 @@ namespace F1WebSite.Controllers
 
             return View(model);
         }
+<<<<<<< HEAD
 
         //[HttpPost]
         //public IActionResult InsertTeam(Team team)
@@ -49,6 +50,40 @@ namespace F1WebSite.Controllers
             
         //}
 
+=======
+        public IActionResult Video()
+        {
+            return View();
+        }
+        public IActionResult Latest()
+        {
+            return View();
+        }
+        public IActionResult F1Unlocked()
+        {
+            return View();
+        }
+        public IActionResult Schedule()
+        {
+            return View();
+        }
+        public IActionResult Results()
+        {
+            return View();
+        }
+        public IActionResult Drivers()
+        {
+            return View();
+        }
+        public IActionResult Gaming()
+        {
+            return View();
+        }
+        public IActionResult liveTiming()
+        {
+            return View();
+        }
+>>>>>>> 9cc0075841b519aed84c9b5e02ec555234b291d3
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
