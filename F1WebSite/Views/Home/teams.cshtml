@@ -1,53 +1,64 @@
 ﻿@{
-    ViewData["Title"] = "F1 Teams";
+	@model F1WebSite.ViewModels.TeamsViewModel
+	ViewData["Title"] = "F1 Teams";
 }
 
 <
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Teams 2024</title>
-    <link rel="stylesheet" href="~/css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>F1 Teams 2024</title>
+	<link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    <div class="team-container">
-        <div class="team">
-            <div class="team-header">
-                <h1>McLaren</h1>
-                <span class="points">608 PTS</span>
-            </div>
-            <div class="team-body">
-                <div class="drivers">
-                    <p>Lando NORRIS</p>
-                </div>
-                <div class="drivers">
-                    <p>Oscar PIASTRI</p>
-                </div>
-                <img src="mclaren-car.jpg" alt="McLaren Car" class="team-car">
-            </div>
-        </div>
+	<div class="team-container">
 
-        <div class="team">
-            <div class="team-header">
-                <h1>Ferrari</h1>
-                <span class="points">584 PTS</span>
-            </div>
-            <div class="team-body">
-                <div class="drivers">
-                    <img src="driver3.jpg" alt="Charles Leclerc" class="driver-img">
-                    <p>Charles LECLERC</p>
-                </div>
-                <div class="drivers">
-                    <img src="driver4.jpg" alt="Carlos Sainz" class="driver-img">
-                    <p>Carlos SAINZ</p>
-                </div>
-                <img src="ferrari-car.jpg" alt="Ferrari Car" class="team-car">
-            </div>
-        </div>
+        @{
+            // Create a list to store the teams that have already been displayed
+            var usedTeams = new List<string>();
+        }
 
-        <!-- Add more teams as needed -->
-    </div>
+        @foreach (Drivers driver in Model.Drivers)
+        {
+                // Check if the team has already been displayed
+                if (!usedTeams.Contains(driver.Team))
+                {
+                    // Add the team to the list of used teams
+                    usedTeams.Add(driver.Team);
+
+                    <div class="team">
+                        <div class="team-header">
+                            <h1>@driver.Team</h1> <!-- Only show this if the team is not already used -->
+                        </div>
+
+                        <div class="team-body">
+                            <div class="drivers">
+                                <p>@driver.name</p> <!-- Show both driver names in one field -->
+                            </div>
+@*                             <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@team.name" alt="McLaren Car" class="team-car">
+ *@                            
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    // Render the driver without the team header if the team was already used
+                    <div class="team">
+                        <div class="team-body">
+                            <div class="drivers">
+                                <p>@driver.name</p> <!-- Show both driver names in one field -->
+                            </div>
+@*                             <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@team.name" alt="McLaren Car" class="team-car">
+ *@                            
+                        </div>
+                    </div>
+                }
+        }
+
+
+
+	</div>
 </body>
 </html>
