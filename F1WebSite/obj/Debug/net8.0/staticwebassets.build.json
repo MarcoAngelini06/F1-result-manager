@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l0RwyZRGjcf6AVz18XtM16Ty6qY3+U4zkCqZzuigBt0=",
+  "Hash": "eS9pdWni081Thhzjm8C0dHg2lBypcEYw9qKghYmXqg8=",
   "Source": "F1WebSite",
   "BasePath": "_content/F1WebSite",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\style.css",
+      "SourceId": "F1WebSite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\",
+      "BasePath": "_content/F1WebSite",
+      "RelativePath": "css/style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2nn1zydgri",
+      "Integrity": "7shmziHEjKsbBHo7TneCDAjeLCBeSWkqsWYpQAWNnyc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\favicon.ico",
@@ -1399,6 +1420,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.2nn1zydgri.css",
+      "AssetFile": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1079"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7shmziHEjKsbBHo7TneCDAjeLCBeSWkqsWYpQAWNnyc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 11:09:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2nn1zydgri"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7shmziHEjKsbBHo7TneCDAjeLCBeSWkqsWYpQAWNnyc="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.css",
+      "AssetFile": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1079"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7shmziHEjKsbBHo7TneCDAjeLCBeSWkqsWYpQAWNnyc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 11:09:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7shmziHEjKsbBHo7TneCDAjeLCBeSWkqsWYpQAWNnyc="
         }
       ]
     },
