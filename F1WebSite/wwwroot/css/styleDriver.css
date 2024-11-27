@@ -9,8 +9,13 @@ body {
 
 /* Driver Page Title */
 .driver-title {
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
+    margin-left: 25px;
+    border-top: 7px solid #000;
+    border-right: 7px solid #000;
+    border-top-right-radius: 15px;
+    margin-right: 25px;
 }
 
     .driver-title h1 {

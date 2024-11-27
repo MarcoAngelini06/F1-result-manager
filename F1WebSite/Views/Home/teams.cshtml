@@ -19,6 +19,7 @@
 
         </p>
     </div>
+    <button type="button">Submit</button>
 
     <div class="team-container">
         @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.TeamName))
@@ -30,11 +31,18 @@
                 </div>
 
                 <div class="team-drivers">
+                    @{bool isFirst = true;}
                     @foreach (var driver in teamGroup)
                     {
                         <div class="driver">
                             <p>@driver.name @driver.surname</p>
                         </div>
+                        @if(isFirst==true)
+                        {
+                            <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamGroup.Key-logo.png"
+                                 alt="team" class="team-logo" />
+                            isFirst = false;
+                        }
                     }
                 </div>
 

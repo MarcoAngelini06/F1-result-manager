@@ -13,8 +13,8 @@
     text-transform: uppercase; /* Uppercase for impact */
     color: #000000; /* Dark color for visibility */
     margin-bottom: 15px; /* Space below the title */
-    border-top: 10px solid var(--team-border-color, #000000);
-    border-right: 10px solid var(--team-border-color, #000000);
+    border-top: 10px solid #000;
+    border-right: 10px solid #000;
     border-top-right-radius: 20px;
 }
 
@@ -58,22 +58,44 @@
     height: auto;
     display: block;
 }
+.team-logo {
+    width: 50px; /* Set a fixed width for the logo */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed its container's size */
+}
 
 .team-drivers {
     display: flex; /* Align children side by side */
     gap: 20px; /* Add space between driver elements */
     justify-content: center; /* Center the driver elements */
     padding: 15px;
-}
+    position: relative;
 
-.driver {
-    font-size: 1.2em;
-    white-space: nowrap; /* Prevent text from wrapping */
-    /*overflow: hidden; /* Optional: Hide overflow if text is too long */
-    text-overflow: ellipsis; /* Optional: Add ellipsis (...) for long text */
-    min-width: 100px; /* Ensure consistent sizing */
-    text-align: center;
-    flex: 1; /* Allow flexible sizing */
-    border-top: 2px solid #000; /* Add a black line on top of the text */
-    border-bottom: 2px solid #000; /* Add a black line on top of the text */
+}
+.team-drivers::before,
+.team-drivers::after{
+    content: ''; /* Empty content for the line */
+    position: absolute;
+    top: 0; /* Position it at the top of the .team-drivers container */
+    left: 0;
+    width: 100%; /* Make the line span the entire width */
+    height: 2px; /* Adjust the thickness of the line */
+    background-color: #000; /* Line color */
+}
+    .team-drivers::after{
+        bottom: 0;
+    }
+    .driver {
+        justify-content: center;
+        font-size: 1.2em;
+        white-space: nowrap; /* Prevent text from wrapping */
+        /*overflow: hidden; /* Optional: Hide overflow if text is too long */
+        text-overflow: ellipsis; /* Optional: Add ellipsis (...) for long text */
+        min-width: 100px; /* Ensure consistent sizing */
+        text-align: center;
+        flex: 1; /* Allow flexible sizing */
+    }
+.driver p {
+    margin: 5px; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }

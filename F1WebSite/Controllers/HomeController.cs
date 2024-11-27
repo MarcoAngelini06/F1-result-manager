@@ -67,7 +67,6 @@ namespace F1WebSite.Controllers
 
             var model = new TeamsViewModel
             {
-                //Teams = teams,
                 Drivers = driversList,
             };
 

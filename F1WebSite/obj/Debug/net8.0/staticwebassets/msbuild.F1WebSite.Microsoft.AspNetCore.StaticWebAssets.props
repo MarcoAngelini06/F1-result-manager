@@ -1,5 +1,23 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LandingPage.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>F1WebSite</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F1WebSite</BasePath>
+      <RelativePath>css/LandingPage.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>22d9omxsr3</Fingerprint>
+      <Integrity>phXBX6n8t+v+DePO8K7064a+NQ9bxtdL5RNt/xMlO3w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LandingPage.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
       <SourceType>Package</SourceType>
       <SourceId>F1WebSite</SourceId>
@@ -30,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>28lau8n3qp</Fingerprint>
-      <Integrity>8rfwXvtyONVJi94oQ3b6q2ZCyNnQU4h1KkLiEVHqF3E=</Integrity>
+      <Fingerprint>zv10lg1720</Fingerprint>
+      <Integrity>j06JzaT9rrYWk+OYdBDtFX9egnafoAyKsHuAdhBKh6g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleDriver.css'))</OriginalItemSpec>
@@ -48,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>a2fzt0nz76</Fingerprint>
-      <Integrity>AqR8Jt+itYkIpGxGGuwTeh2XizhY/B9D9kEr0uQwAyA=</Integrity>
+      <Fingerprint>v3rld0xjvh</Fingerprint>
+      <Integrity>hYbg1pcwdfn7sp/QkEwM4y9/85MlWxzm9KElWyVuOIc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleF1.css'))</OriginalItemSpec>
