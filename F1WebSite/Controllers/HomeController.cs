@@ -28,29 +28,18 @@ namespace F1WebSite.Controllers
         public IActionResult Teams()
         {
 
-            List<Team> teams  = _dbAccess.GetTeamsList();
-            List<Drivers> drivers = _dbAccess.GetDriverList();
+           // List<Team> teams  = _dbAccess.GetTeamsList();
+            List<Drivers> driversList = _dbAccess.GetDriverList();
 
 
             var model = new TeamsViewModel
             {
-                Teams = teams,
-                Drivers = drivers,
+                //Teams = teams,
+                Drivers = driversList,
             };
 
             return View(model);
         }
-<<<<<<< HEAD
-
-        //[HttpPost]
-        //public IActionResult InsertTeam(Team team)
-        //{
-        //    _dbAccess.InsertNewTeam();
-
-            
-        //}
-
-=======
         public IActionResult Video()
         {
             return View();
@@ -73,7 +62,16 @@ namespace F1WebSite.Controllers
         }
         public IActionResult Drivers()
         {
-            return View();
+            List<Drivers> driversList = _dbAccess.GetDriverList();
+
+
+            var model = new TeamsViewModel
+            {
+                //Teams = teams,
+                Drivers = driversList,
+            };
+
+            return View(model);
         }
         public IActionResult Gaming()
         {
@@ -83,8 +81,7 @@ namespace F1WebSite.Controllers
         {
             return View();
         }
->>>>>>> 9cc0075841b519aed84c9b5e02ec555234b291d3
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

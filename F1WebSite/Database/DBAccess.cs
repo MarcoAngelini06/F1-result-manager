@@ -11,59 +11,59 @@ namespace F1WebSite.Database
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-        public List<Team> GetTeamsList()
-        {
-            var teams = new List<Team>();
+//        public List<Team> GetTeamsList()
+//        {
+//            var teams = new List<Team>();
 
-            //            string query = 
-            //@"select  distinct t.[Id],[name],[totPoints],[teamColor], [isDeletable]  = CASE WHEN Dt.id is null then 1 else 0 end
-            //from Teams t left join  DriverTeam dt on dt.Team = t.Id";  
-            string query = @"
-SELECT 
-    Teams.[Id], 
-    Teams.[name], 
-    Teams.[totPoints], 
-    Teams.[teamColor], 
-    STRING_AGG(Drivers.[name], ', ') AS DriverNames, -- Combines driver names into one field
-    [isDeletable] = CASE WHEN DriverTeam.Id IS NULL THEN 1 ELSE 0 END
-FROM 
-    Teams
-INNER JOIN 
-    DriverTeam ON Teams.Id = DriverTeam.Team
-INNER JOIN 
-    CarSeason ON DriverTeam.CarSeason = CarSeason.Id
-INNER JOIN 
-    Season ON CarSeason.Season = Season.Id
-INNER JOIN 
-    Drivers ON DriverTeam.Driver = Drivers.Id
-INNER JOIN 
-    Car ON CarSeason.Car = Car.Id
-WHERE 
-    Season.year = 2024
-GROUP BY 
-    Teams.[Id], Teams.[name], Teams.[totPoints], Teams.[teamColor], DriverTeam.Id
-ORDER BY 
-    Teams.totPoints DESC;";
+//            //            string query = 
+//            //@"select  distinct t.[Id],[name],[totPoints],[teamColor], [isDeletable]  = CASE WHEN Dt.id is null then 1 else 0 end
+//            //from Teams t left join  DriverTeam dt on dt.Team = t.Id";  
+//            string query = @"
+//SELECT 
+//    Teams.[Id], 
+//    Teams.[name], 
+//    Teams.[totPoints], 
+//    Teams.[teamColor], 
+//    STRING_AGG(Drivers.[name], ', ') AS DriverNames, -- Combines driver names into one field
+//    [isDeletable] = CASE WHEN DriverTeam.Id IS NULL THEN 1 ELSE 0 END
+//FROM 
+//    Teams
+//INNER JOIN 
+//    DriverTeam ON Teams.Id = DriverTeam.Team
+//INNER JOIN 
+//    CarSeason ON DriverTeam.CarSeason = CarSeason.Id
+//INNER JOIN 
+//    Season ON CarSeason.Season = Season.Id
+//INNER JOIN 
+//    Drivers ON DriverTeam.Driver = Drivers.Id
+//INNER JOIN 
+//    Car ON CarSeason.Car = Car.Id
+//WHERE 
+//    Season.year = 2024
+//GROUP BY 
+//    Teams.[Id], Teams.[name], Teams.[totPoints], Teams.[teamColor], DriverTeam.Id
+//ORDER BY 
+//    Teams.totPoints DESC;";
 
-            using (var conn = new SqlConnection(_connectionString))
-            {
-                teams = conn.Query<Team>(query).ToList();
-            }
-            return teams;
-        }
+//            using (var conn = new SqlConnection(_connectionString))
+//            {
+//                teams = conn.Query<Team>(query).ToList();
+//            }
+//            return teams;
+//        }
         public List<Drivers> GetDriverList()
         {
             var drivers = new List<Drivers>();
 
-            string query = @"
-SELECT Distinct Drivers.[name], Drivers.surname, Teams.[name]
-FROM Teams
-INNER JOIN DriverTeam ON Teams.Id = DriverTeam.Team
-INNER JOIN CarSeason ON DriverTeam.CarSeason = CarSeason.Id
-INNER JOIN Season ON CarSeason.season = Season.Id
-INNER JOIN Drivers ON DriverTeam.Driver = Drivers.Id
-INNER JOIN Car ON CarSeason.car = Car
-WHERE Season.[year]='2024';";
+            string query = @"SELECT Distinct Drivers.[name], Drivers.surname, Teams.TeamName, Teams.teamColor, Drivers.number, Drivers.nationality
+                            FROM Teams
+                            INNER JOIN DriverTeam ON Teams.Id = DriverTeam.Team
+                            INNER JOIN CarSeason ON DriverTeam.CarSeason = CarSeason.Id
+                            INNER JOIN Season ON CarSeason.season = Season.Id
+                            INNER JOIN Drivers ON DriverTeam.Driver = Drivers.Id
+                            INNER JOIN Car ON CarSeason.car = Car
+                            WHERE Season.[year]='2024';
+                            ";
             using (var conn = new SqlConnection(_connectionString))
             {
                 drivers = conn.Query<Drivers>(query).ToList();
@@ -79,7 +79,7 @@ WHERE Season.[year]='2024';";
 
             using (var conn = new SqlConnection(_connectionString))
             {
-                conn.Execute(query, new { team.name, team.totPoints, team.teamColor});
+                conn.Execute(query, new { team.TeamName, team.totPoints, team.teamColor});
             }
         }
     }

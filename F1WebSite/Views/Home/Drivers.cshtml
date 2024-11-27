@@ -1,4 +1,54 @@
-﻿@page
-@model F1WebSite.Views.Home.DriversModel
+﻿@model F1WebSite.ViewModels.TeamsViewModel
 @{
+    ViewData["Title"] = "F1 Teams";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styleDriver.css">
+</head>
+<body>
+    <div class="driver-title">
+        <h1>
+            F1 Drivers 2024
+        </h1>
+        <p>
+            Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions. Follow your favourite F1 drivers on and off the track.
+        </p>
+    </div>
+
+    <div class="driver-container">
+        @foreach (var driver in Model.Drivers)
+        {
+            var teamColor = driver.TeamColor;
+
+            <div class="driver-card" style="--team-border-color: @teamColor;">
+                <div class="driver-info">
+                    
+                    <div class="driver-name">
+                        <p>@driver.name @driver.surname</p>
+                        <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/@driver.Nationality-flag.png"
+                             alt="@driver.Nationality" class="flag" />
+                    </div>
+                </div>
+                <div class="driver-image">
+                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/@driver.surname"
+                         alt="@driver.name" />
+                </div>
+                <div class="driver-number">
+                    <p>@driver.Number</p>
+                    <p>@driver.TeamName</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+</html>
+
+</html>
+

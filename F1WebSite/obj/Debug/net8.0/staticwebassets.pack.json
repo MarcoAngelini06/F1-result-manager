@@ -9,8 +9,12 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\style.css",
-      "PackagePath": "staticwebassets\\css\\style.css"
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleDriver.css",
+      "PackagePath": "staticwebassets\\css\\styleDriver.css"
+    },
+    {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleF1.css",
+      "PackagePath": "staticwebassets\\css\\styleF1.css"
     },
     {
       "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\favicon.ico",

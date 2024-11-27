@@ -1,5 +1,6 @@
 wwwroot\css\site.css
-wwwroot\css\style.css
+wwwroot\css\styleDriver.css
+wwwroot\css\styleF1.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

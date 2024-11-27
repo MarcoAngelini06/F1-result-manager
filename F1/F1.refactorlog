@@ -35,4 +35,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="CarSeason" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="da299fef-ae81-4d64-898a-11064c8f81ca" ChangeDateTime="11/27/2024 08:19:25">
+    <Property Name="ElementName" Value="[dbo].[Teams].[name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Teams]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeamName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="593dec74-4a06-4403-94f8-09ce818b0650" ChangeDateTime="11/27/2024 10:26:56">
+    <Property Name="ElementName" Value="[dbo].[Drivers].[numero]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Drivers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="number" />
+  </Operation>
 </Operations>

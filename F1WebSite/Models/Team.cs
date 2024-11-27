@@ -3,7 +3,7 @@
     public class Team
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string TeamName { get; set; }
         public int totPoints { get; set; }
         public string teamColor { get; set; }
 
