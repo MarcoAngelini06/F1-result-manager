@@ -55,15 +55,11 @@ namespace F1WebSite.Database
         {
             var drivers = new List<Drivers>();
 
-            string query = @"SELECT Distinct Drivers.[name], Drivers.surname, Teams.TeamName, Teams.teamColor, Drivers.number, Drivers.nationality, Teams.Id
-                            FROM Teams
-                            INNER JOIN DriverTeam ON Teams.Id = DriverTeam.Team
-                            INNER JOIN CarSeason ON DriverTeam.CarSeason = CarSeason.Id
-                            INNER JOIN Season ON CarSeason.season = Season.Id
-                            INNER JOIN Drivers ON DriverTeam.Driver = Drivers.Id
-                            INNER JOIN Car ON CarSeason.car = Car
-                            WHERE Season.[year]='2024';
-                            ";
+            string query = @"
+SELECT Distinct Drivers.[name], Drivers.surname, Teams.TeamName, Teams.teamColor, Drivers.number, Drivers.nationality, Teams.Id
+FROM Teams
+LEFT JOIN DriverTeam ON Teams.Id = DriverTeam.Team
+LEFT JOIN Drivers ON DriverTeam.Driver = Drivers.Id";
             using (var conn = new SqlConnection(_connectionString))
             {
                 drivers = conn.Query<Drivers>(query).ToList();

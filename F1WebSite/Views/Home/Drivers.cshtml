@@ -24,30 +24,32 @@
     <div class="driver-container">
         @foreach (var driver in Model.Drivers)
         {
-            var teamColor = driver.TeamColor;
+            if(driver.name!=null)
+            {
+                var teamColor = driver.TeamColor;
 
-            <div class="driver-card" style="--team-border-color: @teamColor;">
-                <div class="driver-info">
-                    <div class="driver-name">
-                        <p>@driver.name @driver.surname</p>
-                        <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/@driver.Nationality-flag.png"
-                             alt="@driver.Nationality" class="flag" />
+                <div class="driver-card" style="--team-border-color: @teamColor;">
+                    <div class="driver-info">
+                        <div class="driver-name">
+                            <p>@driver.name @driver.surname</p>
+                            <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/@driver.Nationality-flag.png"
+                                 alt="@driver.Nationality" class="flag" />
+                        </div>
+                    </div>
+                    <div class="driver-image">
+                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/@driver.surname"
+                             alt="@driver.name" />
+                    </div>
+                    <div class="driver-number">
+                        <p>@driver.Number</p>
+                        <p>@driver.TeamName</p>
                     </div>
                 </div>
-                <div class="driver-image">
-                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/@driver.surname"
-                         alt="@driver.name" />
-                </div>
-                <div class="driver-number">
-                    <p>@driver.Number</p>
-                    <p>@driver.TeamName</p>
-                </div>
-            </div>
+            }
+            
         }
 
     </div>
 
-    <!-- Back to Team List Button -->
-    <a href="@Url.Action("Index", "Team")">← Back to Teams</a>
 </body>
 </html>
