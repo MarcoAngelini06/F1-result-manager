@@ -8,5 +8,6 @@
         public string TeamColor { get; set; }
         public string Number { get; set; }
         public string Nationality { get; set; }
+        public int Id { get; set; }
     }
 }

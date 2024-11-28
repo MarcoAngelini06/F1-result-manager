@@ -3,7 +3,24 @@
     margin: 0;
     padding: 0;
     width: 100%; /* Ensures body takes full width */
-}   
+}
+/* Remove the underline from links */
+a {
+    text-decoration: none; /* removes the underline */
+    color: inherit; /* makes the text color inherit from the parent (so it doesn't change) */
+}
+
+    /* Style the team-card to ensure it behaves as expected when wrapped in an anchor tag */
+    a.team-card {
+        display: block; /* ensures the anchor takes up the full width and height of the card */
+    }
+
+        /* Prevent hover effects on the anchor link */
+        a.team-card:hover {
+            background-color: transparent; /* Prevent background color change */
+            color: inherit; /* Prevent text color change */
+            box-shadow: none; /* Remove any shadow effects */
+        }
 .Title h1 {
     margin-top: 50px;
     font-weight: 700; /* Makes the text bold */
@@ -27,13 +44,21 @@
     padding: 20px;
     width: 100%; /* Makes sure the container takes the full width of the screen */
 }
-
+.team-card-container {
+    position: relative; /* Ensure positioned elements like the button align properly */
+    display: flex; /* Layout both button and card in a flex container */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center the card and button */
+    margin: 20px auto; /* Center the container and add spacing */
+    width: fit-content; /* Adjust width based on content */
+}
 .team-card {
+    position: relative; /* Make the card the reference point for the button */
     background: #fff;
-    border-top: 3px solid var(--team-border-color, #ddd); 
+    border-top: 3px solid var(--team-border-color, #ddd);
     border-right: 3px solid var(--team-border-color, #ddd);
     border-top-right-radius: 10px;
-    overflow: hidden;
+    overflow: visible; /* Allow the button to be outside the card */
     width: 600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -42,6 +67,8 @@
     align-items: center;
     text-align: center;
 }
+
+   
     .team-card:hover {
         transform: scale(1.05);
         border-color: var(--team-border-color, #000000); /* Use custom property on hover */
@@ -52,6 +79,7 @@
     padding: 10px;
 
 }
+
 
 .team-image img {
     width: 100%;
@@ -99,3 +127,40 @@
     margin: 5px; /* Remove default margins */
     padding: 0; /* Remove default padding */
 }
+
+
+.button {
+    position: absolute;
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%); /* Adjust to center exactly */
+    width: 50px; /* Set the width for the circular button */
+    height: 50px;
+    background-color: #aa1515;
+    color: #ddd;
+    border: none;
+    border-radius: 50%;
+    line-height: 50px; /* Matches the height */
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensure the button stays on top */
+    padding: 0; /* Ensures no extra space affects alignment */
+    opacity: 0; 
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.team-card-container:nth-child(odd) .button {
+    left: -100px;
+}
+
+.team-card-container:nth-child(even) .button {
+    right: -100px;
+}
+
+.team-card-container:hover .button {
+    opacity: 1; /* Show button on hover */
+}
+
+
+

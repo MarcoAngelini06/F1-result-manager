@@ -1,6 +1,6 @@
 ﻿@model F1WebSite.ViewModels.TeamsViewModel
 @{
-    ViewData["Title"] = "F1 Teams";
+    ViewData["Title"] = "F1 Drivers 2024";
 }
 
 <!DOCTYPE html>
@@ -28,7 +28,6 @@
 
             <div class="driver-card" style="--team-border-color: @teamColor;">
                 <div class="driver-info">
-                    
                     <div class="driver-name">
                         <p>@driver.name @driver.surname</p>
                         <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/@driver.Nationality-flag.png"
@@ -47,7 +46,8 @@
         }
 
     </div>
+
+    <!-- Back to Team List Button -->
+    <a href="@Url.Action("Index", "Team")">← Back to Teams</a>
 </body>
 </html>
-
-

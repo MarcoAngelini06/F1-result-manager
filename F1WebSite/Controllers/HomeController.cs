@@ -28,10 +28,7 @@ namespace F1WebSite.Controllers
         public IActionResult Teams()
         {
 
-           // List<Team> teams  = _dbAccess.GetTeamsList();
             List<Drivers> driversList = _dbAccess.GetDriverList();
-
-
             var model = new TeamsViewModel
             {
                 //Teams = teams,
@@ -40,6 +37,19 @@ namespace F1WebSite.Controllers
 
             return View(model);
         }
+        public IActionResult RemoveTeam(string teamName)
+        {
+            _dbAccess.RemoveTeam(teamName);
+
+            List<Drivers> driversList = _dbAccess.GetDriverList();
+            var model = new TeamsViewModel
+            {
+                Drivers = driversList
+            };
+
+            return View("Teams", model);
+        }
+
         public IActionResult Video()
         {
             return View();
@@ -60,11 +70,14 @@ namespace F1WebSite.Controllers
         {
             return View();
         }
-        public IActionResult Drivers()
+        public IActionResult Drivers(int? teamId)
         {
             List<Drivers> driversList = _dbAccess.GetDriverList();
 
-
+            if (teamId.HasValue)
+            {
+                driversList = driversList.Where(d => d.Id == teamId.Value).ToList();
+            }
             var model = new TeamsViewModel
             {
                 Drivers = driversList,

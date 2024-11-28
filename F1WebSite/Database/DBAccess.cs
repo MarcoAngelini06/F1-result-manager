@@ -55,7 +55,7 @@ namespace F1WebSite.Database
         {
             var drivers = new List<Drivers>();
 
-            string query = @"SELECT Distinct Drivers.[name], Drivers.surname, Teams.TeamName, Teams.teamColor, Drivers.number, Drivers.nationality
+            string query = @"SELECT Distinct Drivers.[name], Drivers.surname, Teams.TeamName, Teams.teamColor, Drivers.number, Drivers.nationality, Teams.Id
                             FROM Teams
                             INNER JOIN DriverTeam ON Teams.Id = DriverTeam.Team
                             INNER JOIN CarSeason ON DriverTeam.CarSeason = CarSeason.Id
@@ -82,5 +82,17 @@ namespace F1WebSite.Database
                 conn.Execute(query, new { team.TeamName, team.totPoints, team.teamColor});
             }
         }
+        public void RemoveTeam(string teamName)
+        {
+            string query = "DELETE FROM Teams WHERE TeamName = @teamName;";
+
+            using (var conn = new SqlConnection(_connectionString))
+            {
+               
+                conn.Execute(query, new { teamName }); 
+            }
+        }
+
+
     }
 }

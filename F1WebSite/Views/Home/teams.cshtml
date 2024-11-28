@@ -12,46 +12,83 @@
     <link rel="stylesheet" href="~/css/styleF1.css">
 </head>
 <body>
-    <div class="team-header">
+    <div class="Title">
         <h1>F1 2024</h1>
         <p>
             Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
-
         </p>
     </div>
-    <button type="button">Submit</button>
 
     <div class="team-container">
         @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.TeamName))
         {
             var teamColor = teamGroup.First().TeamColor;
-            <div class="team-card" style="--team-border-color: @teamColor;">
-                <div class="team-header">
-                    <h1>@teamGroup.Key</h1>
-                </div>
+            <div class="team-card-container">
+                <a href="@Url.Action("Drivers", "Home", new { teamId = teamGroup.First().Id })" class="team-card" style="--team-border-color: @teamColor;">
+                    <div class="team-header">
+                        <h1>@teamGroup.Key</h1>
+                    </div>
 
-                <div class="team-drivers">
-                    @{bool isFirst = true;}
-                    @foreach (var driver in teamGroup)
-                    {
-                        <div class="driver">
-                            <p>@driver.name @driver.surname</p>
-                        </div>
-                        @if(isFirst==true)
-                        {
-                            <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamGroup.Key-logo.png"
-                                 alt="team" class="team-logo" />
-                            isFirst = false;
+                    <div class="team-drivers">
+                        @{
+                            bool isFirst = true;
                         }
-                    }
-                </div>
+                        @foreach (var driver in teamGroup)
+                        {
+                            <div class="driver">
+                                <p>@driver.name @driver.surname</p>
+                            </div>
+                            @if (isFirst == true)
+                            {
+                                string teamNameForLogo = TeamCleaner(teamGroup.Key);
+                                <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamNameForLogo-logo.png"
+                                alt="team" class="team-logo" />
+                                isFirst = false;
+                            }
+                        }
+                    </div>
 
-                <div class="team-image">
-                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamGroup.Key"
-                         alt="@teamGroup.Key Car" />
-                </div>
+                    <div class="team-image">
+                        @{
+                            string teamNameForIMG = TeamCleaner(teamGroup.Key);
+                        }
+                        <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamNameForIMG"
+                        alt="@teamGroup.Key Car" />
+                    </div>
+                    
+                </a>
+@*                 <input type="button" value="-" onclick="location.href='@Url.Action("RemoveTeam", "RemoveTeam", new { teamName = teamGroup.Key })'" />
+ *@
             </div>
+            
         }
     </div>
+
+    @functions {
+        public string TeamCleaner(string team)
+        {
+            
+
+            int spaceIndex = team.IndexOf(' ');
+
+            if (spaceIndex != -1) 
+            {
+                string afterSpace = team.Substring(spaceIndex + 1);
+
+                if (afterSpace.StartsWith("Ra"))
+                {
+                    return  team.Substring(0, spaceIndex);
+                }
+                else
+                {
+                   return team = team.Replace(" ", "-");
+                }
+            }
+            return team;
+        }
+        }
+    }
+
+    
 </body>
 </html>
