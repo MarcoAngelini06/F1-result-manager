@@ -3,6 +3,7 @@ using F1WebSite.Models;
 using Microsoft.AspNetCore.Mvc;
 using F1WebSite.Database;
 using F1WebSite.ViewModels;
+using System.Reflection;
 
 namespace F1WebSite.Controllers
 {
@@ -29,10 +30,20 @@ namespace F1WebSite.Controllers
         {
 
             List<Drivers> driversList = _dbAccess.GetDriverList();
-            var model = new TeamsViewModel
+            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+            foreach (DriverTeam d in driverTeamList) 
             {
-                //Teams = teams,
+                if (d.driver == null)
+                {
+                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
+                    currentTeam.isDeletable = true;
+                }
+            }
+            var model = new DriversViewModel
+            {
                 Drivers = driversList,
+                Teams = teamsList,
             };
 
             return View(model);
@@ -42,14 +53,38 @@ namespace F1WebSite.Controllers
             _dbAccess.RemoveTeam(teamName);
 
             List<Drivers> driversList = _dbAccess.GetDriverList();
-            var model = new TeamsViewModel
+            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+            foreach (DriverTeam d in driverTeamList)
+            {
+                if (d.driver == null)
+                {
+                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
+                    currentTeam.isDeletable = true;
+                }
+            }
+            var model = new DriversViewModel
+            {
+                Drivers = driversList,
+                Teams = teamsList,
+            };
+
+            return View("Teams", model);
+        }
+        public IActionResult AddTeam(Team team)
+        {
+            _dbAccess.InsertNewTeam(team);
+
+            List<Drivers> driversList = _dbAccess.GetDriverList();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+
+            var model = new DriversViewModel
             {
                 Drivers = driversList
             };
 
             return View("Teams", model);
         }
-
         public IActionResult Video()
         {
             return View();
@@ -73,14 +108,17 @@ namespace F1WebSite.Controllers
         public IActionResult Drivers(int? teamId)
         {
             List<Drivers> driversList = _dbAccess.GetDriverList();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+
 
             if (teamId.HasValue)
             {
-                driversList = driversList.Where(d => d.Id == teamId.Value).ToList();
+                driversList = driversList.Where(d => d.teamId == teamId.Value).ToList();
             }
-            var model = new TeamsViewModel
+            var model = new DriversViewModel
             {
                 Drivers = driversList,
+                Teams = teamsList,
             };
 
             return View(model);

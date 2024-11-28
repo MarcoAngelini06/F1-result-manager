@@ -1,4 +1,4 @@
-﻿@model F1WebSite.ViewModels.TeamsViewModel
+﻿@model F1WebSite.ViewModels.DriversViewModel
 @{
     ViewData["Title"] = "F1 Teams";
 }
@@ -14,57 +14,107 @@
 <body>
     <div class="Title">
         <h1>F1 2024</h1>
-        <input type="button" value="-" class="button"
+        <button id="addTeamButton" class="addButton">Add new team</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h2>
+                    Add a new team
+                </h2>
+                <p>This is a popup box!</p>
+                <input type="button" value="submit"
+                onclick="location.href='@Url.Action("InsertNewTeam", "Home")'" />
+
+            </div>
+        </div>
         <p>
             Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
         </p>
     </div>
 
     <div class="team-container">
-        @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.TeamName))
+        @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.teamId))
         {
-            var teamColor = teamGroup.First().TeamColor;
-            <div class="team-card-container">
-                <a href="@Url.Action("Drivers", "Home", new { teamId = teamGroup.First().Id })" class="team-card" style="--team-border-color: @teamColor;">
-                    <div class="team-header">
-                        <h1>@teamGroup.Key</h1>
-                    </div>
+            try{
+                Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == teamGroup.Key);
+                var teamColor = currentTeam.teamColor;
+                <div class="team-card-container">
+                    <a href="@Url.Action("Drivers", "Home", new { teamId = teamGroup.First().teamId })" class="team-card" style="--team-border-color: @teamColor;">
+                        <div class="team-header">
+                            <h1>@currentTeam.TeamName</h1>
+                        </div>
 
-                    <div class="team-drivers">
-                        @{
-                            bool isFirst = true;
-                        }
-                        @foreach (var driver in teamGroup)
-                        {
-                            <div class="driver">
-                                <p>@driver.name @driver.surname</p>
-                            </div>
-                            @if (isFirst == true)
-                            {
-                                string teamNameForLogo = TeamCleaner(teamGroup.Key);
-                                <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamNameForLogo-logo.png"
-                                alt="team" class="team-logo" />
-                                isFirst = false;
+                        <div class="team-drivers">
+                            @{
+                                bool isFirst = true;
                             }
-                        }
-                    </div>
+                            @foreach (var driver in teamGroup)
+                            {
+                                <div class="driver">
+                                    <p>@driver.name @driver.surname</p>
+                                </div>
+                                @if (isFirst == true)
+                                {
+                                    string teamNameForLogo = TeamCleaner(currentTeam.TeamName);
+                                    <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamNameForLogo-logo.png"
+                                         alt="team" class="team-logo" />
+                                    isFirst = false;
+                                }
+                            }
+                        </div>
 
-                    <div class="team-image">
-                        @{
-                            string teamNameForIMG = TeamCleaner(teamGroup.Key);
+                        <div class="team-image">
+                            @{
+                                string teamNameForIMG = TeamCleaner(currentTeam.TeamName);
+                            }
+                            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamNameForIMG"
+                                 alt="@teamGroup.Key Car" />
+                        </div>
+
+                    </a>
+                    @{
+                        if(currentTeam.isDeletable)
+                        {
+                            <input type="button" value="-" class="button"
+                                   onclick="location.href='@Url.Action("RemoveTeam", "Home", new { teamName = currentTeam.TeamName })'" />
                         }
-                        <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamNameForIMG"
-                        alt="@teamGroup.Key Car" />
-                    </div>
+                    }
                     
-                </a>
-                <input type="button" value="-" class="button"
-                       onclick="location.href='@Url.Action("RemoveTeam", "Home", new { teamName = teamGroup.Key })'" /> 
-            </div>
+                </div>
+            }catch(Exception e)
+            {
+                throw new ApplicationException("current team set to NULL", e);
+
+            }
+            
             
         }
     </div>
-
+    <script>
+        myButton.addEventListener(
+            "click",
+            function () {
+                myPopup.classList.add("show");
+            }
+        );
+        closePopup.addEventListener(
+            "click",
+            function () {
+                myPopup.classList.remove(
+                    "show"
+                );
+            }
+        );
+        window.addEventListener(
+            "click",
+            function (event) {
+                if (event.target == myPopup) {
+                    myPopup.classList.remove(
+                        "show"
+                    );
+                }
+            }
+        );
+    </script>
     @functions {
         public string TeamCleaner(string team)
         {
