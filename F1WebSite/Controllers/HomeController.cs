@@ -71,16 +71,27 @@ namespace F1WebSite.Controllers
 
             return View("Teams", model);
         }
-        public IActionResult AddTeam(Team team)
+
+        [HttpGet]
+        public IActionResult AddTeam(string teamName)
         {
-            _dbAccess.InsertNewTeam(team);
+            _dbAccess.InsertNewTeam(teamName);
 
             List<Drivers> driversList = _dbAccess.GetDriverList();
+            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
             List<Team> teamsList = _dbAccess.GetTeamList();
-
+            foreach (DriverTeam d in driverTeamList)
+            {
+                if (d.driver == null)
+                {
+                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
+                    currentTeam.isDeletable = true;
+                }
+            }
             var model = new DriversViewModel
             {
-                Drivers = driversList
+                Drivers = driversList,
+                Teams = teamsList,
             };
 
             return View("Teams", model);

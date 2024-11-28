@@ -1,6 +1,7 @@
 ﻿using F1WebSite.Models;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Microsoft.AspNetCore.Mvc;
 namespace F1WebSite.Database
 {
     public class DBAccess
@@ -58,17 +59,33 @@ FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             }
             return driverTeam;
         }
-        public void InsertNewTeam(Team team)
+        //public void InsertNewTeam(Team team)
+        //{
+        //    var teams = new List<Team>();
+
+        //    string query = "INSERT INTO dbo.Teams VALUE (@name,@totPoints,@teamColor)";
+
+        //    using (var conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Execute(query, new { team.TeamName, team.totPoints, team.teamColor});
+        //    }
+        //}
+        public void InsertNewTeam(string teamName)
         {
-            var teams = new List<Team>();
-
-            string query = "INSERT INTO dbo.Teams VALUE (@name,@totPoints,@teamColor)";
-
+            
+                Team newTeam = new Team
+                {
+                    TeamName = teamName,
+                    
+                };
+            string query = "INSERT INTO Teams (TeamName) VALUES (@TeamName)";
             using (var conn = new SqlConnection(_connectionString))
             {
-                conn.Execute(query, new { team.TeamName, team.totPoints, team.teamColor});
+                conn.Execute(query, new { TeamName = newTeam.TeamName });
             }
         }
+
+        
         public void RemoveTeam(string teamName)
         {
             string query = "DELETE FROM Teams WHERE TeamName = @teamName;";
