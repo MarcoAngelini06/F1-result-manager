@@ -1,5 +1,16 @@
 ﻿
-
+.addButton {
+    width: 50px; /* Set the width for the circular button */
+    height: 50px;
+    background-color: #aa1515;
+    color: #ddd;
+    border: none;
+    border-radius: 50%;
+    line-height: 50px; /* Matches the height */
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
 
 .popup {
     display: none;
@@ -45,7 +56,7 @@
 }
 
     .form label {
-        color: #007BFF; /* Set label text color */
+        color: #000000; /* Set label text color */
         font-size: 1.1rem; /* Adjust font size for labels */
         font-weight: bold; /* Make the label text bold */
         margin-bottom: 5px; /* Add space below labels */

@@ -126,6 +126,22 @@ namespace F1WebSite.Controllers
 
             return View("Drivers", model);
         }
+
+        [HttpGet]
+        public IActionResult AddRace(string name, string date, int laps,int trackId)
+        {
+            _dbAccess.InsertNewRace(name, date, laps, trackId);
+
+            List<Tracks> tracksList = _dbAccess.GetTracksList();
+            List<Races> racesList = _dbAccess.GetRaceList();
+            var model = new DriversViewModel
+            {
+                Tracks = tracksList,
+                Races = racesList,
+            };
+
+            return View("Race",model);
+        }
         public IActionResult Video()
         {
             return View();
@@ -182,9 +198,19 @@ namespace F1WebSite.Controllers
 
             return View(model);
         }
-        public IActionResult Gaming()
+        public IActionResult Races()
         {
-            return View();
+
+            List<Tracks> tracksList = _dbAccess.GetTracksList();
+            List<Races> racesList = _dbAccess.GetRaceList();
+
+            var model = new DriversViewModel
+            {
+                Tracks = tracksList,
+                Races = racesList,
+            };
+
+            return View(model);
         }
         public IActionResult liveTiming()
         {

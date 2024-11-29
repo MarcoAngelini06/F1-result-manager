@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\views\\home\\races.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\views\\home\\races.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,44 +15,28 @@
       "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\database\\dbaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\views\\home\\drivers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\views\\home\\drivers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\viewmodels\\teamsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\viewmodels\\teamsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\wwwroot\\css\\styledriver.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\wwwroot\\css\\styledriver.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\models\\races.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\models\\races.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\views\\home\\teams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\views\\home\\teams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{194A3482-36D7-4CE1-A0BF-A91D2D87C030}|F1\\F1.sqlproj|C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1\\data\\data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{194A3482-36D7-4CE1-A0BF-A91D2D87C030}|F1\\F1.sqlproj|solutionrelative:F1\\data\\data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\models\\tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\models\\tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\viewmodels\\teamsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\viewmodels\\teamsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\wwwroot\\css\\shared.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\wwwroot\\css\\shared.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\wwwroot\\css\\stylef1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\wwwroot\\css\\stylef1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\views\\home\\driverteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\views\\home\\driverteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\views\\home\\drivers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\views\\home\\drivers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|c:\\users\\stage\\desktop\\f1\\f1-result-manager\\f1website\\viewmodels\\driversviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6295A64-466A-4988-886C-AFCB48DBDF9F}|F1WebSite\\F1WebSite.csproj|solutionrelative:f1website\\viewmodels\\driversviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{194A3482-36D7-4CE1-A0BF-A91D2D87C030}|F1\\F1.sqlproj|C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1\\data\\data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{194A3482-36D7-4CE1-A0BF-A91D2D87C030}|F1\\F1.sqlproj|solutionrelative:F1\\data\\data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,101 +46,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "data.sql ",
-              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1\\data\\data.sql",
-              "RelativeDocumentMoniker": "F1\\data\\data.sql",
-              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1\\data\\data.sql",
-              "RelativeToolTip": "F1\\data\\data.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-29T11:00:31.393Z",
+              "DocumentIndex": 6,
+              "Title": "Tracks.cs",
+              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Models\\Tracks.cs",
+              "RelativeDocumentMoniker": "F1WebSite\\Models\\Tracks.cs",
+              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Models\\Tracks.cs",
+              "RelativeToolTip": "F1WebSite\\Models\\Tracks.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T15:22:36.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Races.cs",
+              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Models\\Races.cs",
+              "RelativeDocumentMoniker": "F1WebSite\\Models\\Races.cs",
+              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Models\\Races.cs",
+              "RelativeToolTip": "F1WebSite\\Models\\Races.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T15:22:33.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Races.cshtml",
+              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\Races.cshtml",
+              "RelativeDocumentMoniker": "F1WebSite\\Views\\Home\\Races.cshtml",
+              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\Races.cshtml",
+              "RelativeToolTip": "F1WebSite\\Views\\Home\\Races.cshtml",
+              "ViewState": "AgIAACsAAAAAAAAAAAAswEcAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-29T13:27:35.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Drivers.cshtml",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\Drivers.cshtml",
               "RelativeDocumentMoniker": "F1WebSite\\Views\\Home\\Drivers.cshtml",
               "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\Drivers.cshtml",
               "RelativeToolTip": "F1WebSite\\Views\\Home\\Drivers.cshtml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAYwHwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD4AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-28T11:25:18.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "teams.cshtml",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\teams.cshtml",
               "RelativeDocumentMoniker": "F1WebSite\\Views\\Home\\teams.cshtml",
               "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\teams.cshtml",
               "RelativeToolTip": "F1WebSite\\Views\\Home\\teams.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-29T10:04:50.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "shared.css",
-              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\shared.css",
-              "RelativeDocumentMoniker": "F1WebSite\\wwwroot\\css\\shared.css",
-              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\shared.css",
-              "RelativeToolTip": "F1WebSite\\wwwroot\\css\\shared.css",
-              "ViewState": "AgIAACAAAAAAAAAAAAAcwEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-29T10:02:38.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "styleDriver.css",
-              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleDriver.css",
-              "RelativeDocumentMoniker": "F1WebSite\\wwwroot\\css\\styleDriver.css",
-              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleDriver.css",
-              "RelativeToolTip": "F1WebSite\\wwwroot\\css\\styleDriver.css",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-29T08:37:23.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "styleF1.css",
-              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleF1.css",
-              "RelativeDocumentMoniker": "F1WebSite\\wwwroot\\css\\styleF1.css",
-              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleF1.css",
-              "RelativeToolTip": "F1WebSite\\wwwroot\\css\\styleF1.css",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAAAKQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-28T09:49:58.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "DriversViewModel.cs",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\ViewModels\\DriversViewModel.cs",
               "RelativeDocumentMoniker": "F1WebSite\\ViewModels\\DriversViewModel.cs",
               "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\ViewModels\\DriversViewModel.cs",
               "RelativeToolTip": "F1WebSite\\ViewModels\\DriversViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T13:36:52.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "TeamsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\ViewModels\\TeamsViewModel.cs",
               "RelativeDocumentMoniker": "F1WebSite\\ViewModels\\TeamsViewModel.cs",
@@ -165,41 +141,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DBAccess.cs",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Database\\DBAccess.cs",
               "RelativeDocumentMoniker": "F1WebSite\\Database\\DBAccess.cs",
               "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Database\\DBAccess.cs",
               "RelativeToolTip": "F1WebSite\\Database\\DBAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA3wF0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T10:39:16.42Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "F1WebSite\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Controllers\\HomeController.cs",
               "RelativeToolTip": "F1WebSite\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAgwGsAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAA3wNQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T09:12:15.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DriverTeam.cshtml",
-              "DocumentMoniker": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\DriverTeam.cshtml",
-              "RelativeDocumentMoniker": "F1WebSite\\Views\\Home\\DriverTeam.cshtml",
-              "ToolTip": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\Views\\Home\\DriverTeam.cshtml",
-              "RelativeToolTip": "F1WebSite\\Views\\Home\\DriverTeam.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-29T08:11:33.242Z",
               "EditorCaption": ""
             }
           ]

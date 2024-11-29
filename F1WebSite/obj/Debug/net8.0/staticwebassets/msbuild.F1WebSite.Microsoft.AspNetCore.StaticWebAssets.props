@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9iel8x4nuc</Fingerprint>
-      <Integrity>sWgtf3yH5OJeVxuYylpF4wuaNLbQCt5GIJ9gDws5OF4=</Integrity>
+      <Fingerprint>dw75qgd98g</Fingerprint>
+      <Integrity>w56blkeUtqXbk5y+OMxs2CqzShRYGU46x0zA2Oe4+bg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\shared.css'))</OriginalItemSpec>
@@ -84,11 +84,29 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>s8cz83cxod</Fingerprint>
-      <Integrity>ROMij7g8LVf3nrhVRaTmqC/YvO2szcPsRxVn28F7TNE=</Integrity>
+      <Fingerprint>x90gca8arw</Fingerprint>
+      <Integrity>m6b09quU7kqDIHFZ+K5JCBflyMaNFVkQzannGvpY1Ik=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleF1.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleRace.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>F1WebSite</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/F1WebSite</BasePath>
+      <RelativePath>css/styleRace.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rw3gsw885x</Fingerprint>
+      <Integrity>NezeTxrc0ZC9siBTuLfokfl4M8S4r0goyIXZBnuLZRI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleRace.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\F1WebSite.ivv8dsv8jy.bundle.scp.css'))">
       <SourceType>Package</SourceType>

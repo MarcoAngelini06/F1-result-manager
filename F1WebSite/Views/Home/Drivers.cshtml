@@ -15,7 +15,11 @@
 <body>
     <div class="driver-title">
         <h1>F1 Drivers 2024</h1>
-        <button id="addDriverButton" class="addDriverButton" onclick="togglePopup()">+</button>
+        <p>
+            Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions.
+            Follow your favourite F1 drivers on and off the track.
+        </p>
+        <button id="addDriverButton" class="addButton" onclick="togglePopup()">+</button>@* opens a pop-up with a form that asks the driver info *@
 
         <div id="myPopup" class="popup">
             <div class="popup-content">
@@ -48,14 +52,11 @@
 
         <div class="overlay" onclick="closePopup()"></div>
 
-        <p>
-            Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions.
-            Follow your favourite F1 drivers on and off the track.
-        </p>
+       
     </div>
 
     <div class="driver-container">
-        @foreach (var driver in Model.Drivers)
+        @foreach (var driver in Model.Drivers)  //foreach driver it prints their name and if it's the first of the team it also adds the team logo and immage'
         {
             if (!string.IsNullOrWhiteSpace(driver.name) && !string.IsNullOrWhiteSpace(driver.surname))
             {
@@ -95,7 +96,7 @@
                 surname: document.getElementById('surnameOfDriver').value,
                 number: document.getElementById('number').value,
                 nationality: document.getElementById('nationality').value,
-                teamId: document.getElementById('team').value // Corrected to use teamId
+                teamId: document.getElementById('team').value 
             };
 
             if (!driver.name || !driver.surname || !driver.number || !driver.nationality || !driver.teamId) {
@@ -103,18 +104,15 @@
                 return;
             }
 
-            console.log("Driver Name:", driver.name); // Log the driver name
-            console.log("Selected Team ID:", driver.teamId); // Log the selected team ID
-
-            var url = '@Url.Action("AddDriver", "Home")' +
+            var url = '@Url.Action("AddDriver", "Home")' +   //sends all the data to the home controller wich adds the driver to the DB 
                          '?name=' + encodeURIComponent(driver.name) +
                          '&surname=' + encodeURIComponent(driver.surname) +
                          '&number=' + encodeURIComponent(driver.number) +
                          '&nationality=' + encodeURIComponent(driver.nationality) +
-                         '&teamId=' + encodeURIComponent(driver.teamId); // Corrected to use teamId
+                         '&teamId=' + encodeURIComponent(driver.teamId); 
 
-            // Redirect to the URL (submit the data)
-            window.location.href = url;
+                       window.location.href = url;
+
         }
 
         function closePopup() {

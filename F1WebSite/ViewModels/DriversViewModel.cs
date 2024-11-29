@@ -6,6 +6,8 @@ namespace F1WebSite.ViewModels
     {
         public List<Drivers> Drivers { get; set; }
         public List<Team> Teams { get; set; }
+        public List<Tracks> Tracks { get; set; }
+        public List<Races> Races { get; set; }
 
     }
 }

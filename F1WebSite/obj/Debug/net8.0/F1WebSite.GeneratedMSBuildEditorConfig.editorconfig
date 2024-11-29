@@ -32,10 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGMVVubG9ja2VkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/stage/Desktop/F1/F1-result-manager/F1WebSite/Views/Home/Gaming.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYW1pbmcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/stage/Desktop/F1/F1-result-manager/F1WebSite/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/stage/Desktop/F1/F1-result-manager/F1WebSite/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/stage/Desktop/F1/F1-result-manager/F1WebSite/Views/Home/Races.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSYWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/stage/Desktop/F1/F1-result-manager/F1WebSite/Views/Home/Results.cshtml]

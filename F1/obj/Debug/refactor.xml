@@ -56,4 +56,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="teamId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e2f68cfa-7c0a-40ce-99af-0e22c0ab3f38" ChangeDateTime="11/29/2024 15:34:06" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Tracks].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tracks]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="trackId" />
+  </Operation>
 </Operations>

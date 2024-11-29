@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace F1WebSite.Database
 {
     public class DBAccess
@@ -59,6 +60,39 @@ FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             }
             return driverTeam;
         }
+        public List<Tracks> GetTracksList()
+        {
+            var tracks = new List<Tracks>();
+            string query = @"
+SELECT DISTINCT
+Tracks.trackId,
+ Tracks.[name],
+Tracks.city,
+Tracks.country
+FROM Tracks;";
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                tracks = conn.Query<Tracks>(query).ToList();
+            }
+            return tracks;
+        }
+        public List<Races> GetRaceList()
+        {
+            var races = new List<Races>();
+            string query = @"
+SELECT DISTINCT
+Races.Id,
+Races.[name],
+Races.date,
+Races.laps,
+Tracks.trackId
+FROM Races INNER JOIN Tracks ON(Tracks.trackId=Races.Track);";
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                races = conn.Query<Races>(query).ToList();
+            }
+            return races;
+        }
         public void InsertNewTeam(string teamName)
         {
             
@@ -74,6 +108,23 @@ FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             }
         }
 
+        public void InsertNewRace(string name, string date, int laps,int track)
+        {
+
+            string query = "INSERT INTO Races (name, date, Laps, Track) VALUES (@RaceName, @RaceDate, @Laps, @Track)";
+            var newRace = new
+            {
+                RaceName = name,
+                RaceDate = date,
+                Laps = laps,
+                Track = track
+            };
+            // Execute the query
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Execute(query, newRace);
+            }
+        }
         public void InsertNewDriver(Drivers driver)
         {
             string query = "INSERT INTO Drivers (name, surname, number, nationality) VALUES (@name, @surname, @Number, @Nationality)";
