@@ -59,17 +59,6 @@ FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             }
             return driverTeam;
         }
-        //public void InsertNewTeam(Team team)
-        //{
-        //    var teams = new List<Team>();
-
-        //    string query = "INSERT INTO dbo.Teams VALUE (@name,@totPoints,@teamColor)";
-
-        //    using (var conn = new SqlConnection(_connectionString))
-        //    {
-        //        conn.Execute(query, new { team.TeamName, team.totPoints, team.teamColor});
-        //    }
-        //}
         public void InsertNewTeam(string teamName)
         {
             
@@ -85,7 +74,33 @@ FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             }
         }
 
-        
+        public void InsertNewDriver(Drivers driver)
+        {
+            string query = "INSERT INTO Drivers (name, surname, number, nationality) VALUES (@name, @surname, @Number, @Nationality)";
+            string queryGetId = @"
+SELECT TOP 1 Drivers.Id
+FROM Drivers
+ORDER BY Drivers.Id DESC;";
+            string queryTeam = "INSERT INTO DriverTeam (driver,team) VALUES (@driver, @team)";
+
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Execute(query, new//inserting new driver into driver table
+                {
+                    Name = driver.name,
+                    Surname = driver.surname,
+                    Number = driver.Number,
+                    Nationality = driver.Nationality,
+                });
+                var driverResult = conn.QueryFirstOrDefault<int>("SELECT TOP 1 Id FROM Drivers ORDER BY Id DESC");
+                //getting the ID that is asigned to it 
+                conn.Execute(queryTeam, new//updating the Driver/Team table
+                {
+                        driver = driverResult,
+                        team = driver.teamId,
+                    });
+            }     
+        }
         public void RemoveTeam(string teamName)
         {
             string query = "DELETE FROM Teams WHERE TeamName = @teamName;";

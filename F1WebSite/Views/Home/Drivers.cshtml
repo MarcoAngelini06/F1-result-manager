@@ -1,6 +1,6 @@
 ﻿@model F1WebSite.ViewModels.DriversViewModel
 @{
-    ViewData["Title"] = "F1 Drivers 2024";
+    ViewData["Title"] = "F1 Teams";
 }
 
 <!DOCTYPE html>
@@ -10,26 +10,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/styleDriver.css">
+    <link rel="stylesheet" href="~/css/shared.css">
 </head>
 <body>
     <div class="driver-title">
-        <h1>
-            F1 Drivers 2024
-        </h1>
+        <h1>F1 Drivers 2024</h1>
+        <button id="addDriverButton" class="addDriverButton" onclick="togglePopup()">+</button>
+
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h2>Add a New Driver</h2>
+                <div class="form">
+                    <label for="driverName">Driver Name:</label>
+                    <input type="text" id="nameOfDriver" name="name" required />
+
+                    <label for="driverSurname">Driver Surname:</label>
+                    <input type="text" id="surnameOfDriver" name="surname" required />
+
+                    <label for="number">Driver number:</label>
+                    <input type="text" id="number" name="number" required />
+
+                    <label for="nationality">Driver nationality:</label>
+                    <input type="text" id="nationality" name="nationality" required />
+                    <label for="team">Team:</label>
+                    <select id="team" name="team" required>
+                        <option value="" disabled selected>Select a team</option>
+                        @foreach (var team in Model.Teams)
+                        {
+                            <option value="@team.teamId">@team.TeamName</option>
+                        }
+                    </select>
+                </div>
+                <button type="button" onclick="submitDriver()">Submit</button>
+                <button type="button" onclick="closePopup()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="overlay" onclick="closePopup()"></div>
+
         <p>
-            Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions. Follow your favourite F1 drivers on and off the track.
+            Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions.
+            Follow your favourite F1 drivers on and off the track.
         </p>
     </div>
 
     <div class="driver-container">
         @foreach (var driver in Model.Drivers)
         {
-            if(driver.name!=null)
+            if (!string.IsNullOrWhiteSpace(driver.name) && !string.IsNullOrWhiteSpace(driver.surname))
             {
                 Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == driver.teamId);
 
                 var teamColor = currentTeam.teamColor;
-
                 <div class="driver-card" style="--team-border-color: @teamColor;">
                     <div class="driver-info">
                         <div class="driver-name">
@@ -48,10 +80,47 @@
                     </div>
                 </div>
             }
-            
         }
-
     </div>
 
+    <script>
+        function togglePopup() {
+            document.getElementById("myPopup").style.display = "block";
+            document.querySelector(".overlay").style.display = "block";
+        }
+
+        function submitDriver() {
+            var driver = {
+                name: document.getElementById('nameOfDriver').value,
+                surname: document.getElementById('surnameOfDriver').value,
+                number: document.getElementById('number').value,
+                nationality: document.getElementById('nationality').value,
+                teamId: document.getElementById('team').value // Corrected to use teamId
+            };
+
+            if (!driver.name || !driver.surname || !driver.number || !driver.nationality || !driver.teamId) {
+                alert("All fields are required!");
+                return;
+            }
+
+            console.log("Driver Name:", driver.name); // Log the driver name
+            console.log("Selected Team ID:", driver.teamId); // Log the selected team ID
+
+            var url = '@Url.Action("AddDriver", "Home")' +
+                         '?name=' + encodeURIComponent(driver.name) +
+                         '&surname=' + encodeURIComponent(driver.surname) +
+                         '&number=' + encodeURIComponent(driver.number) +
+                         '&nationality=' + encodeURIComponent(driver.nationality) +
+                         '&teamId=' + encodeURIComponent(driver.teamId); // Corrected to use teamId
+
+            // Redirect to the URL (submit the data)
+            window.location.href = url;
+        }
+
+        function closePopup() {
+            document.getElementById("myPopup").style.display = "none";
+            document.querySelector(".overlay").style.display = "none";
+        }
+    </script>
+
 </body>
-</html>

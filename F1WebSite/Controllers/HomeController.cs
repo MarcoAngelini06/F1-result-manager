@@ -96,6 +96,36 @@ namespace F1WebSite.Controllers
 
             return View("Teams", model);
         }
+        [HttpGet]
+        public IActionResult AddDriver(string name, string surname, string number, string nationality, int teamID)
+        {
+            Drivers driverToAdd= new Drivers();
+            driverToAdd.name = name;
+            driverToAdd.surname = surname;
+            driverToAdd.Nationality = nationality;
+            driverToAdd.Number = number;
+            driverToAdd.teamId = teamID;
+            _dbAccess.InsertNewDriver(driverToAdd);
+
+            List<Drivers> driversList = _dbAccess.GetDriverList();
+            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+            foreach (DriverTeam d in driverTeamList)
+            {
+                if (d.driver == null)
+                {
+                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
+                    currentTeam.isDeletable = true;
+                }
+            }
+            var model = new DriversViewModel
+            {
+                Drivers = driversList,
+                Teams = teamsList,
+            };
+
+            return View("Drivers", model);
+        }
         public IActionResult Video()
         {
             return View();
@@ -117,6 +147,24 @@ namespace F1WebSite.Controllers
             return View();
         }
         public IActionResult Drivers(int? teamId)
+        {
+            List<Drivers> driversList = _dbAccess.GetDriverList();
+            List<Team> teamsList = _dbAccess.GetTeamList();
+
+
+            if (teamId.HasValue)
+            {
+                driversList = driversList.Where(d => d.teamId == teamId.Value).ToList();
+            }
+            var model = new DriversViewModel
+            {
+                Drivers = driversList,
+                Teams = teamsList,
+            };
+
+            return View(model);
+        }
+        public IActionResult DriverTeam(int? teamId)
         {
             List<Drivers> driversList = _dbAccess.GetDriverList();
             List<Team> teamsList = _dbAccess.GetTeamList();
