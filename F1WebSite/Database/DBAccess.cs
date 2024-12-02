@@ -53,7 +53,8 @@ FROM [F1].[dbo].[Teams];";
 SELECT DISTINCT
     DriverTeam.DriverTeamId,
     Teams.teamId,
-	DriverTeam.driver
+	DriverTeam.driver,
+    DriverTeam.season
 FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             using (var conn = new SqlConnection(_connectionString))
             {
@@ -117,7 +118,8 @@ SELECT
     finishingPosition,
     finishingTime,
     laps,
-    nPitSops
+    nPitSops,
+    points
 FROM Results;";
 
             using (var conn = new SqlConnection(_connectionString))
@@ -180,14 +182,14 @@ FROM RaceResult;";
             }
         }
         
-        public void InsertNewDriver(Drivers driver)
+        public void InsertNewDriver(Drivers driver,int seasonId)
         {
             string query = "INSERT INTO Drivers (name, surname, number, nationality) VALUES (@name, @surname, @Number, @Nationality)";
             string queryGetId = @"
 SELECT TOP 1 Drivers.Id
 FROM Drivers
 ORDER BY Drivers.Id DESC;";
-            string queryTeam = "INSERT INTO DriverTeam (driver,team) VALUES (@driver, @team)";
+            string queryTeam = "INSERT INTO DriverTeam (driver,team,season) VALUES (@driver, @team,@Season)";
 
             using (var conn = new SqlConnection(_connectionString))
             {
@@ -204,18 +206,21 @@ ORDER BY Drivers.Id DESC;";
                 {
                         driver = driverResult,
                         team = driver.teamId,
+                        Season = seasonId
+                        
                     });
             }     
         }
-        public void InsertNewResult(int driverTeamId, int nPitStops, int laps, int finishingPosition)
+        public void InsertNewResult(int driverTeamId, int nPitStops, int laps, int finishingPosition,int points)
         { 
-            string query = "INSERT INTO Results (DriverTeam, finishingPosition, laps, nPitSops) VALUES ( @DriverTeam, @FinishingPosition, @Laps, @NPitStops)";
+            string query = "INSERT INTO Results (DriverTeam, finishingPosition, laps, nPitSops,points) VALUES ( @DriverTeam, @FinishingPosition, @Laps, @NPitStops,@Ppoints)";
             var newResult = new
             {
                 DriverTeam = driverTeamId,
                 FinishingPosition = finishingPosition,
                 Laps = laps,
-                NPitStops = nPitStops
+                NPitStops = nPitStops,
+                Ppoints = points
             };
             using (var conn = new SqlConnection(_connectionString))
             {

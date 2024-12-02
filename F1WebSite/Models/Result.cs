@@ -8,5 +8,6 @@
         public string FinishingTime { get; set; } // Time taken to finish the race
         public int Laps { get; set; } // Number of laps completed
         public int NPitStops { get; set; } // Number of pit stops made
+        public int Points { get; set; }
     }
 }

@@ -5,5 +5,6 @@
     [finishingPosition] VARCHAR(50) NULL, 
     [finishingTime] TIME NULL, 
     [laps] INT NULL, 
-    [nPitsops] INT NULL
+    [nPitsops] INT NULL, 
+    [points] INT NULL
 )

@@ -44,6 +44,13 @@
                             <option value="@team.teamId">@team.TeamName</option>
                         }
                     </select>
+                    <select id="season" name="season" required>
+                        <option value="" disabled selected>Select a season</option>
+                        @foreach (var season in Model.Seasons)
+                        {
+                            <option value="@season.seasonId">@season.year</option>
+                        }
+                    </select>
                 </div>
                 <button type="button" onclick="submitDriver()">Submit</button>
                 <button type="button" onclick="closePopup()">Cancel</button>
@@ -96,7 +103,9 @@
                 surname: document.getElementById('surnameOfDriver').value,
                 number: document.getElementById('number').value,
                 nationality: document.getElementById('nationality').value,
-                teamId: document.getElementById('team').value 
+                teamId: document.getElementById('team').value,
+                seasonId: document.getElementById('season').value
+                                
             };
 
             if (!driver.name || !driver.surname || !driver.number || !driver.nationality || !driver.teamId) {
@@ -109,7 +118,8 @@
                          '&surname=' + encodeURIComponent(driver.surname) +
                          '&number=' + encodeURIComponent(driver.number) +
                          '&nationality=' + encodeURIComponent(driver.nationality) +
-                         '&teamId=' + encodeURIComponent(driver.teamId); 
+                         '&teamId=' + encodeURIComponent(driver.teamId)+
+                         '&seasonId=' + encodeURIComponent(driver.seasonId);
 
                        window.location.href = url;
 

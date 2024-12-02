@@ -13,7 +13,10 @@
 </head>
 <body>
     <div>
-        <h1>Race Results</h1>
+        @{
+            Races thisRace = Model.Races.FirstOrDefault(r => r.Id == Model.RaceId);
+        }
+        <h1>Race Results @thisRace.name</h1>
     </div>
 
     <!-- Race Results Table -->
@@ -26,6 +29,7 @@
                     <th>DRIVER</th>
                     <th>TEAM</th>
                     <th>LAPS</th>
+                    <th>POINTS</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +47,7 @@
                             <td>@driver.name @driver.surname</td>
                             <td>@currentTeam.TeamName</td>
                             <td>@result.Laps</td>
+                            <td>@result.Points</td>
                             <td></td>
                         </tr>
                     }
