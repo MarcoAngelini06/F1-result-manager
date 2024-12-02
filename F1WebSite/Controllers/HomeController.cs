@@ -134,13 +134,16 @@ namespace F1WebSite.Controllers
 
             List<Tracks> tracksList = _dbAccess.GetTracksList();
             List<Races> racesList = _dbAccess.GetRaceList();
+            List<Season> seasonsList = _dbAccess.GetSeasonList();
+
             var model = new DriversViewModel
             {
                 Tracks = tracksList,
                 Races = racesList,
+                Seasons = seasonsList,
             };
 
-            return View("Race",model);
+            return View("races",model);
         }
         public IActionResult Video()
         {
@@ -203,11 +206,13 @@ namespace F1WebSite.Controllers
 
             List<Tracks> tracksList = _dbAccess.GetTracksList();
             List<Races> racesList = _dbAccess.GetRaceList();
+            List<Season> seasonsList= _dbAccess.GetSeasonList();
 
             var model = new DriversViewModel
             {
                 Tracks = tracksList,
                 Races = racesList,
+                Seasons = seasonsList,
             };
 
             return View(model);

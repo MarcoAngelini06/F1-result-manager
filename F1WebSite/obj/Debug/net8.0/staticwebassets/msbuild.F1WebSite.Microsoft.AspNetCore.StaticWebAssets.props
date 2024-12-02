@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>rw3gsw885x</Fingerprint>
-      <Integrity>NezeTxrc0ZC9siBTuLfokfl4M8S4r0goyIXZBnuLZRI=</Integrity>
+      <Fingerprint>xkif6ozeut</Fingerprint>
+      <Integrity>0eFsnmWBqH5j3RJrl6HD042eKgJZl4QuSwftSvsP1vE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styleRace.css'))</OriginalItemSpec>

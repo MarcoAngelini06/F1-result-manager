@@ -14,7 +14,14 @@
 <body>
     <div class="driver-title">
         <h1>F1 Races</h1>
-        <button id="addRaceButton" class="addButton" onclick="togglePopup()">+</button>@* opens a pop-up with a form that asks the driver info *@
+        <select id="seasonTG" name="seasonTG" required onchange="filterRaces()">
+            <option value="" disabled selected>Season:</option>
+            @foreach (var season in Model.Seasons)
+            {
+                <option value="@season.seasonId">@season.year</option>
+            }
+        </select>
+        <button id="addRaceButton" class="addButton" onclick="togglePopup()">+</button>@* opens a pop-up with a form that asks the race info *@
 
         <div id="myPopup" class="popup">
             <div class="popup-content">
@@ -48,38 +55,53 @@
 
 
     </div>
-    <div class="race-card-container">
+    <div class="race-card-container" id="raceCardContainer">
         @foreach (var race in Model.Races)
         {
-            <a class="race-card" style="--race-border-color: #FF4500;">
-                <div class="race-header">
-                    <h1>@race.name</h1>
-                </div>
+            <div class="race-card" data-season="@race.season">
+                <a class="race-card-link" style="--race-border-color: #FF4500;">
+                    <div class="race-header">
+                        <h1>@race.name</h1>
+                    </div>
 
-                <div class="race-details">
-                    @{
-                        DateTime raceDate;
-                        if (DateTime.TryParse(race.date, out raceDate))
-                        {
-                            <p><strong>Date:</strong> @raceDate.ToString("yyyy-MM-dd")</p>
+                    <div class="race-details">
+                        @{
+                            DateTime raceDate;
+                            if (DateTime.TryParse(race.date, out raceDate))
+                            {
+                                <p><strong>Date:</strong> @raceDate.ToString("yyyy-MM-dd")</p>
+                            }
+                            else
+                            {
+                                <p><strong>Date:</strong> Invalid date</p>
+                            }
                         }
-                        else
-                        {
-                            <p><strong>Date:</strong> Invalid date</p>
+                        <p><strong>Laps:</strong> @race.laps</p>
+                        @{
+                            var currentTrack = Model.Tracks.FirstOrDefault(t => t.trackId == race.trackId);
                         }
-                    }
-                    <p><strong>Laps:</strong> @race.laps</p>
-                    @{
-                        var currentTrack = Model.Tracks.FirstOrDefault(t => t.trackId == race.trackId);
-                    }
-                    <p><strong>Track:</strong> @currentTrack.name</p> 
-                </div> 
-            </a>
-
+                        <p><strong>Track:</strong> @currentTrack.name</p>
+                    </div>
+                </a>
+            </div>
         }
-    </div> 
+    </div>
 
     <script>
+            // Function to handle filtering the races based on selected season
+        function filterRaces() {
+            const selectedSeason = document.getElementById("seasonTG").value;
+            const raceCards = document.querySelectorAll(".race-card");
+
+            raceCards.forEach(card => {
+                const raceSeason = card.getAttribute("data-season");
+                if (selectedSeason === "" || raceSeason === selectedSeason) {
+                    card.style.display = "block"; // Show the card
+                } else {
+                    card.style.display = "none"; // Hide the card
+                }
+            });
+            }
         function togglePopup() {
             document.getElementById("myPopup").style.display = "block";
             document.querySelector(".overlay").style.display = "block";

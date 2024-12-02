@@ -85,13 +85,26 @@ Races.Id,
 Races.[name],
 Races.date,
 Races.laps,
-Tracks.trackId
+Tracks.trackId,
+Races.season
 FROM Races INNER JOIN Tracks ON(Tracks.trackId=Races.Track);";
             using (var conn = new SqlConnection(_connectionString))
             {
                 races = conn.Query<Races>(query).ToList();
             }
             return races;
+        }
+        public List<Season> GetSeasonList()
+        {
+            var seasons = new List<Season>();
+            string query = @"
+SELECT Season.seasonId,Season.year
+FROM Season;";
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                seasons = conn.Query<Season>(query).ToList();
+            }
+            return seasons;
         }
         public void InsertNewTeam(string teamName)
         {

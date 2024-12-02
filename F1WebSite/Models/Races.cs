@@ -7,5 +7,6 @@
         public string date { get; set; }
         public int laps { get; set; }
         public int trackId {  get; set; }
+        public int season { get; set; }
     }
 }

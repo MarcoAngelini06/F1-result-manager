@@ -8,6 +8,8 @@ namespace F1WebSite.ViewModels
         public List<Team> Teams { get; set; }
         public List<Tracks> Tracks { get; set; }
         public List<Races> Races { get; set; }
+        public List<Season> Seasons { get; set; }
+
 
     }
 }
