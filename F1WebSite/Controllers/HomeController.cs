@@ -1,16 +1,19 @@
 using System.Diagnostics;
 using F1WebSite.Models;
 using Microsoft.AspNetCore.Mvc;
+using F1WebSite.Database;
+using F1WebSite.ViewModels;
 
 namespace F1WebSite.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DBAccess _dbAccess;
+        public HomeController(ILogger<HomeController> logger, DBAccess dbAccess)
         {
             _logger = logger;
+            _dbAccess = dbAccess;
         }
 
         public IActionResult Index()
@@ -24,8 +27,30 @@ namespace F1WebSite.Controllers
         }
         public IActionResult Teams()
         {
-            return View();
+
+            List<Team> teams  = _dbAccess.GetTeamsList();
+            List<Drivers> drivers = _dbAccess.GetDriverList();
+
+
+            var model = new TeamsViewModel
+            {
+                Teams = teams,
+                Drivers = drivers,
+            };
+
+            return View(model);
         }
+<<<<<<< HEAD
+
+        //[HttpPost]
+        //public IActionResult InsertTeam(Team team)
+        //{
+        //    _dbAccess.InsertNewTeam();
+
+            
+        //}
+
+=======
         public IActionResult Video()
         {
             return View();
@@ -58,6 +83,7 @@ namespace F1WebSite.Controllers
         {
             return View();
         }
+>>>>>>> 9cc0075841b519aed84c9b5e02ec555234b291d3
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
