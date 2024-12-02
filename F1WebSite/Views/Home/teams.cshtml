@@ -1,64 +1,157 @@
-﻿@{
-	@model F1WebSite.ViewModels.TeamsViewModel
-	ViewData["Title"] = "F1 Teams";
+﻿@model F1WebSite.ViewModels.DriversViewModel
+@{
+    ViewData["Title"] = "F1 Teams";
 }
 
-<
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>F1 Teams 2024</title>
-	<link rel="stylesheet" href="~/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styleF1.css">
+    <link rel="stylesheet" href="~/css/shared.css">
+
 </head>
 <body>
-	<div class="team-container">
+    <div class="Title">
+        <h1>F1 2024</h1>
+        <p>
+            Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
+        </p>
+        <button id="addTeamButton" class="addButton" onclick="togglePopup()">+</button> @* opens a pop-up with a form that asks the team info *@
 
-        @{
-            // Create a list to store the teams that have already been displayed
-            var usedTeams = new List<string>();
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <h2>Add a New Team</h2>
+                <div class="form">
+                    <label for="teamName">Team Name:</label>
+                    <input type="text" id="nameOfTeam" name="name" required />
+                </div>
+                <button type="button" onclick="submitTeam()">submit</button>
+                <button type="button" onclick="closePopup()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="overlay" onclick="closePopup()"></div>
+        
+    </div>
+
+    <div class="team-container">
+        @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.teamId))
+        {
+            try{
+                Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == teamGroup.Key);
+                var teamColor = currentTeam.teamColor;
+                <div class="team-card-container">
+                    <a href="@Url.Action("DriverTeam", "Home", new { teamId = teamGroup.First().teamId })" class="team-card" style="--team-border-color: @teamColor;">
+                        <div class="team-header">
+                            <h1>@currentTeam.TeamName</h1>
+                        </div>
+
+                        <div class="team-drivers">
+                            @{
+                                bool isFirst = true;
+                            }
+                            @foreach (var driver in teamGroup)
+                            {
+                                <div class="driver">
+                                    <p>@driver.name @driver.surname</p>
+                                </div>
+                                @if (isFirst == true)
+                                {
+                                    string teamNameForLogo = TeamCleaner(currentTeam.TeamName);
+                                    <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamNameForLogo-logo.png"
+                                         alt="team" class="team-logo" />
+                                    isFirst = false;
+                                }
+                            }
+                        </div>
+
+                        <div class="team-image">
+                            @{
+                                string teamNameForIMG = TeamCleaner(currentTeam.TeamName);
+                            }
+                            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamNameForIMG"
+                                 alt="@teamGroup.Key Car" />
+                        </div>
+
+                    </a>
+                    @{
+                        if(currentTeam.isDeletable)
+                        {
+                            <input type="button" value="-" class="button"
+                                   onclick="location.href='@Url.Action("RemoveTeam", "Home", new { teamName = currentTeam.TeamName })'" />
+                        }
+                    }
+                    
+                </div>
+            }catch(Exception e)
+            {
+                throw new ApplicationException("current team set to NULL", e);
+
+            }
+            
+            
+        }
+    </div>
+    <script>
+        function togglePopup() {
+            document.getElementById("myPopup").style.display = "block";
+            document.querySelector(".overlay").style.display = "block";
         }
 
-        @foreach (Drivers driver in Model.Drivers)
+        function closePopup() {
+            document.getElementById("myPopup").style.display = "none";
+            document.querySelector(".overlay").style.display = "none";
+        }
+
+                function submitTeam() {
+            var teamName = document.getElementById('nameOfTeam').value;
+
+            if (!teamName) {
+                alert('Please enter a team name.');
+                return;
+            }
+
+            console.log("Team Name:", teamName);  // Log the team name
+
+            var url = '@Url.Action("AddTeam", "Home")' + '?teamName=' + encodeURIComponent(teamName);
+
+            window.location.href = url;
+        }
+
+        function closePopup() {
+            document.getElementById('myPopup').style.display = 'none';
+            document.querySelector( ".overlay").style.display = 'none';
+        }
+
+    </script>
+    @functions {
+        public string TeamCleaner(string team)
         {
-                // Check if the team has already been displayed
-                if (!usedTeams.Contains(driver.Team))
+            
+
+            int spaceIndex = team.IndexOf(' ');
+
+            if (spaceIndex != -1) 
+            {
+                string afterSpace = team.Substring(spaceIndex + 1);
+
+                if (afterSpace.StartsWith("Ra"))
                 {
-                    // Add the team to the list of used teams
-                    usedTeams.Add(driver.Team);
-
-                    <div class="team">
-                        <div class="team-header">
-                            <h1>@driver.Team</h1> <!-- Only show this if the team is not already used -->
-                        </div>
-
-                        <div class="team-body">
-                            <div class="drivers">
-                                <p>@driver.name</p> <!-- Show both driver names in one field -->
-                            </div>
-@*                             <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@team.name" alt="McLaren Car" class="team-car">
- *@                            
-                        </div>
-                    </div>
+                    return  team.Substring(0, spaceIndex);
                 }
                 else
                 {
-                    // Render the driver without the team header if the team was already used
-                    <div class="team">
-                        <div class="team-body">
-                            <div class="drivers">
-                                <p>@driver.name</p> <!-- Show both driver names in one field -->
-                            </div>
-@*                             <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@team.name" alt="McLaren Car" class="team-car">
- *@                            
-                        </div>
-                    </div>
+                   return team = team.Replace(" ", "-");
                 }
+            }
+            return team;
         }
+        }
+    }
 
-
-
-	</div>
+    
 </body>
 </html>

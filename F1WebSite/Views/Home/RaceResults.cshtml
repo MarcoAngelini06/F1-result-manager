@@ -1,0 +1,55 @@
+﻿@model F1WebSite.ViewModels.DriversViewModel
+@{
+    ViewData["Title"] = "F1 results";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Results.css">
+    <link rel="stylesheet" href="~/css/shared.css">
+</head>
+<body>
+    <div>
+        <h1>Race Results</h1>
+    </div>
+
+    <!-- Race Results Table -->
+    <div class="race-results-container">
+        <table class="race-results-table">
+            <thead>
+                <tr>
+                    <th>POS</th>
+                    <th>NO</th>
+                    <th>DRIVER</th>
+                    <th>TEAM</th>
+                    <th>LAPS</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var RaceResult in Model.RaceResults)
+                {
+                    if(RaceResult.race==Model.RaceId)
+                    {
+                        Result result = Model.Results.FirstOrDefault(r => r.resultId == RaceResult.result);
+                        DriverTeam currDriverTeam = Model.DriverTeam.FirstOrDefault(d => d.driverTeamId == result.DriverTeam);
+                        Drivers driver = Model.Drivers.FirstOrDefault(d => d.Id == currDriverTeam.driver);
+                        Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == driver.teamId);
+                        <tr>
+                            <td>@result.FinishingPosition</td>
+                            <td>@driver.Number</td>
+                            <td>@driver.name @driver.surname</td>
+                            <td>@currentTeam.TeamName</td>
+                            <td>@result.Laps</td>
+                            <td></td>
+                        </tr>
+                    }
+                   
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>

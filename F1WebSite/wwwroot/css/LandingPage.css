@@ -1,0 +1,137 @@
+﻿/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #111;
+}
+
+    .header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff1801;
+    }
+
+.nav a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+    .nav a:hover {
+        color: #fff;
+    }
+
+.extras {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+    .hero h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #ff1801;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .hero button:hover {
+            background: #e31600;
+        }
+
+.news {
+    padding: 20px;
+    background: #111;
+}
+
+    .news h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.news-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-item {
+    width: 300px;
+    text-align: center;
+}
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+.events {
+    padding: 20px;
+    background: #222;
+}
+
+    .events h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.event-item {
+    margin: 10px auto;
+    text-align: center;
+}
+
+    .event-item button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background: #ff1801;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .event-item button:hover {
+            background: #e31600;
+        }
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+
+    .footer .socials a {
+        margin: 0 10px;
+        color: #ccc;
+        text-decoration: none;
+    }
+
+        .footer .socials a:hover {
+            color: #fff;
+        }

@@ -35,4 +35,60 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="CarSeason" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="da299fef-ae81-4d64-898a-11064c8f81ca" ChangeDateTime="11/27/2024 08:19:25">
+    <Property Name="ElementName" Value="[dbo].[Teams].[name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Teams]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeamName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="593dec74-4a06-4403-94f8-09ce818b0650" ChangeDateTime="11/27/2024 10:26:56">
+    <Property Name="ElementName" Value="[dbo].[Drivers].[numero]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Drivers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="number" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0f75d34b-6215-48e5-956f-15c001695f82" ChangeDateTime="11/28/2024 13:41:10">
+    <Property Name="ElementName" Value="[dbo].[Teams].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Teams]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="teamId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e2f68cfa-7c0a-40ce-99af-0e22c0ab3f38" ChangeDateTime="11/29/2024 15:34:06">
+    <Property Name="ElementName" Value="[dbo].[Tracks].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tracks]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="trackId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5051c191-4c41-4fa4-87a6-875df4c86181" ChangeDateTime="11/29/2024 16:18:20">
+    <Property Name="ElementName" Value="[dbo].[Season].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Season]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="seasonId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="868c17ba-8142-49f0-9750-2757b79ca795" ChangeDateTime="12/02/2024 09:17:02">
+    <Property Name="ElementName" Value="[dbo].[Results].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Results]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="resultId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="89aaa3fe-4b0b-4e06-97b7-b8b799d45a2b" ChangeDateTime="12/02/2024 09:46:42">
+    <Property Name="ElementName" Value="[dbo].[DriverTeam].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DriverTeam]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="driverTeamId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="291029b0-f157-43be-b274-58f6336865b9" ChangeDateTime="12/02/2024 10:16:19">
+    <Property Name="ElementName" Value="[dbo].[DriverTeam].[CarSeason]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DriverTeam]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Season" />
+  </Operation>
 </Operations>

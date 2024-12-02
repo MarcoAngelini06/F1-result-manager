@@ -2,9 +2,9 @@
 {
     public class DriverTeam
     {
-        public int Id { get; set; }
-        public string driver { get; set; }
-        public int team { get; set; }
-        public int CarSeason { get; set; }
+        public int driverTeamId {  get; set; }
+        public int teamId { get; set; }
+        public int driver{ get; set; }
+
     }
 }

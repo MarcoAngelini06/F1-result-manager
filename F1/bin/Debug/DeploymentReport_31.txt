@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Tracks].[date] is being dropped, data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Tracks] (Table)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: F1.
+The column [dbo].[Tracks].[date] is being dropped, data loss could occur.
+

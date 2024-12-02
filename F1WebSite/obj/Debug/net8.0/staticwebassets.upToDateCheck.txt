@@ -1,5 +1,10 @@
+wwwroot\css\LandingPage.css
+wwwroot\css\Results.css
+wwwroot\css\shared.css
 wwwroot\css\site.css
-wwwroot\css\style.css
+wwwroot\css\styleDriver.css
+wwwroot\css\styleF1.css
+wwwroot\css\styleRace.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Results]
 (
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+	[resultId] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [DriverTeam] INT NULL, 
     [finishingPosition] VARCHAR(50) NULL, 
     [finishingTime] TIME NULL, 

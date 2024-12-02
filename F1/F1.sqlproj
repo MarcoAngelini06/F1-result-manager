@@ -72,10 +72,9 @@
     <Build Include="dbo\Tables\DriverTeam.sql" />
     <Build Include="dbo\Tables\Car.sql" />
     <Build Include="dbo\Tables\Seasons.sql" />
-    <Build Include="dbo\Tables\CarSeason.sql" />
     <Build Include="dbo\Tables\Tracks.sql" />
     <Build Include="dbo\Tables\Races.sql" />
-    <Build Include="dbo\Tables\Results.sql" />
+    <Build Include="dbo\Tables\Result.sql" />
     <Build Include="dbo\Tables\RaceResult.sql" />
     <Build Include="data\insertRaces.sql" />
   </ItemGroup>

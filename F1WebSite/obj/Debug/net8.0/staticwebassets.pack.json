@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\F1WebSite.ivv8dsv8jy.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\LandingPage.css",
+      "PackagePath": "staticwebassets\\css\\LandingPage.css"
+    },
+    {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\Results.css",
+      "PackagePath": "staticwebassets\\css\\Results.css"
+    },
+    {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\shared.css",
+      "PackagePath": "staticwebassets\\css\\shared.css"
+    },
+    {
       "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\style.css",
-      "PackagePath": "staticwebassets\\css\\style.css"
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleDriver.css",
+      "PackagePath": "staticwebassets\\css\\styleDriver.css"
+    },
+    {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleF1.css",
+      "PackagePath": "staticwebassets\\css\\styleF1.css"
+    },
+    {
+      "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\css\\styleRace.css",
+      "PackagePath": "staticwebassets\\css\\styleRace.css"
     },
     {
       "Id": "C:\\Users\\stage\\Desktop\\F1\\F1-result-manager\\F1WebSite\\wwwroot\\favicon.ico",

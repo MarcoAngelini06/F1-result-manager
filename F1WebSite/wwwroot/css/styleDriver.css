@@ -1,0 +1,132 @@
+﻿/* Body and Overall Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for the page */
+    color: #333; /* Default text color */
+}
+
+/* Driver Page Title */
+.driver-title {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 25px;
+    border-top: 7px solid #000;
+    border-right: 7px solid #000;
+    border-top-right-radius: 15px;
+    margin-right: 25px;
+}
+
+    .driver-title h1 {
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+    }
+
+/* Container for the driver profiles */
+.driver-container {
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between the cards */
+    padding: 40px 20px;
+    justify-items: center; /* Center cards horizontally */
+}
+
+/* Driver Card Container */
+.driver-card {
+    background-color:  var(--team-border-color, #333);
+    border-top: 3px solid #000000;
+    border-right: 3px solid #000000;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure the card takes full width of its grid cell */
+    max-width: 300px; /* Optional: Restrict the max width of each card */
+    padding: 30px;
+    text-align: left; /* Ensures all content in the card is left-aligned */
+}
+.driver-name {
+    
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center both name and flag */
+    justify-content: space-between; /* Space between the name and flag */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.5; /* Adjust line height */
+    width: 100%; /* Make the container span full width */
+}
+.driver-name p {
+    margin: 5px; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+.flag {
+    width: 35px; /* Set flag size */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 10px; /* Space between name and flag */
+    margin: 5px; /* Remove default margins */
+}
+
+
+
+/* Optional: Remove text alignment as it's redundant with flexbox */
+.driver-info {
+    text-align: center; /* Ensures all content inside the driver-info section is centered */
+    width: 100%; /* Ensures the driver-info container takes up full width */
+}
+.driver-number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1; /* Adjust line height */
+    width: 80%; /* Make the container span full width */
+    color: #000;
+}
+
+
+.driver-image {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+    .driver-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image fits without distortion */
+    }
+
+
+.driver-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.driver-stat {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #555;
+}
+
+    .driver-stat span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+    }
+
+
