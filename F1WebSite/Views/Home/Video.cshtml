@@ -1,3 +1,437 @@
-﻿@{
-    ViewData["Title"] = "Video";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Banner and Highlights</title>
+    <style>
+        /* BANNER */
+        .banner {
+            width: 100%;
+            background-color: #131925;
+            position: relative;
+            padding: 50px 30px 50px 30px;
+            margin: 0;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        .BannerTitle {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* BORDI "Must See" */
+        .MustSeeBorder {
+            border: solid;
+            border-width: 10px;
+            border-radius: 15px;
+            border-color: red;
+            border-left-color: transparent;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            padding: 15px;
+        }
+
+        /* VIDEO BORDI */
+        .VideoBorder {
+            border: solid;
+            border-color: dimgrey;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-width: 2px;
+            border-bottom-right-radius: 15px;
+            padding: 30px;
+            padding-top: 15px;
+            transition: all 0.3s ease; /* Transizione per animazione */
+        }
+
+            /* Hover: cambia bordo a rosso */
+            .VideoBorder:hover {
+                border-color: red !important;
+                border-left-color: transparent !important;
+                border-top-color: transparent !important;
+                background-color: #1f2833; /* Colore di sfondo opzionale per hover */
+            }
+
+        /* HIGHLIGHTS */
+        h1 {
+            font-family: 'Offside', sans-serif;
+        }
+
+        .highlights {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: white;
+            text-align: center;
+        }
+
+            .highlights:hover {
+                background-color: #f8f9fa; /* Cambia colore al passaggio del mouse */
+            }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        h2 div {
+            margin-top: 5px;
+        }
+
+        .gallery-container {
+            display: flex; /* Utilizza il layout flexbox */
+            flex-wrap: wrap; /* Permette agli elementi di andare a capo se necessario */
+            gap: 10px; /* Spaziatura tra gli elementi */
+            justify-content: space-between; /* Distribuisce gli elementi uniformemente */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .video-item {
+            flex: 1 1 calc(25% - 10px);
+            max-width: calc(25% - 10px);
+            box-sizing: border-box;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-item:hover{
+                background-color: black;
+                color:white;
+
+        }
+        .video-item video {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .video-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!--..........................BANNER............................-->
+    <div class="banner">
+        <h1 class="BannerTitle">
+            Video
+        </h1>
+        <h2 class="BannerTitle" style="font-size: smaller;">
+            Must-see
+        </h2>
+
+        <div style="display: flex; align-items: center;">
+            <!-- Sezione Video Principale -->
+            <div class="MustSeeBorder" style="display: flex; align-items: center;">
+                <div style="margin-right: 20px;">
+                    <a href="#" style="text-decoration: none;">
+                        <div>
+                            <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/873d243b-f753-4047-b647-2e0eceba3da8/80012b12-7b1e-4ef4-96c1-d934979b32da/997x516/match/image.jpg"
+                                 style="width: 500px;" alt="Video Thumbnail">
+                        </div>
+                        <div class="VideoBorder">
+                            <h2 style="font-size: smaller; color: white;">
+                                <div>32:57</div>
+                                <div>2024 Qatar Grand Prix: Weekend Warm-Up</div>
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sezione Video Laterale -->
+                <div>
+                    <div>
+                        <a href="#" style="text-decoration: none;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/a1af557b-70d8-4c9a-8270-685d7f5bbbea/1d41c0fe-ad18-4323-a02a-2b04dd6b9272/997x516/match/image.jpg"
+                                     style="width: 300px;" alt="Video Thumbnail">
+                            </div>
+                            <div class="VideoBorder">
+                                <h2 style="font-size: smaller; color: white;">
+                                    <div>3:36</div>
+                                    <div>The Cooldown Room: Magic, speed guns</div>
+                                    <div>and a red carpet | F1 TV</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" style="text-decoration: none;">
+                            <div class="VideoBorder">
+                                <h2 style="font-size: smaller; color: white;">
+                                    <div>10:17</div>
+                                    <div>Jolyon Palmer's Analysis: Who was</div>
+                                    <div>slick on the Vegas Strip?</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nuovi Video -->
+            <div style="margin: 40px;">
+                <div>
+                    <div>
+                        <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/0bede668-0ae6-4f6d-ac84-4b93ba13e7bd/9004167a-ec30-4b6c-a6b2-f8bd430867e5/997x516/match/image.jpg"
+                             style="width: 400px;" alt="Video Thumbnail">
+                    </div>
+                    <div class="VideoBorder">
+                        <h2 style="font-size: smaller; color: white;">
+                            <div>2:00</div>
+                            <div>HEAD-TO-HEAD: How Russell edged</div>
+                            <div>ahead of Sainz to take pole for the</div>
+                            <div>2024 Las Vegas Grand Prix</div>
+                        </h2>
+                    </div>
+                </div>
+                <div class="VideoBorder" style="margin-top: 20px;">
+                    <h2 style="font-size: smaller; color: white;">
+                        <div>1:54</div>
+                        <div>ONBOARD: George Russell’s 2024</div>
+                        <div>Pirelli Pole Position Award lap at the</div>
+                        <div>Las Vegas Grand Prix</div>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--..........................HIGHLIGHTS............................-->
+    <div>
+        <h1 style="color: black; text-align: left;">Highlights</h1>
+        <center>
+            <table style="border-top:solid; border-top-width:10px">
+                <tr>
+                    <td>
+                        <a href="#" class="highlights" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/4189ea56-fba5-479e-9d2c-78cec320a855/5abaf23f-f338-4119-afa0-4c86301d698d/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Race Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div style="text-align:left;">8:04</div>
+                                    <div>Race Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/27828fef-3289-4358-a469-fb4a023f22fb/6d13edba-637b-4b13-89ee-9791e50b9241/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Qualifying Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>6:59</div>
+                                    <div>Qualifying Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/1b371419-2f1e-4717-8e77-e9816b69ee71/5ad9c477-cf1f-4437-a243-56584489752b/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="FP3 Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>2:33</div>
+                                    <div>FP3 Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--..........................Conversation............................-->
+    <div>
+        <h1 style="color: black; text-align: left;">Conversation</h1>
+        <center>
+            <table style="border-top:solid; border-top-width:10px">
+                <tr>
+                    <td>
+                        <a href="#" class="highlights" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/4189ea56-fba5-479e-9d2c-78cec320a855/5abaf23f-f338-4119-afa0-4c86301d698d/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Race Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div style="text-align:left;">8:04</div>
+                                    <div>Race Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/27828fef-3289-4358-a469-fb4a023f22fb/6d13edba-637b-4b13-89ee-9791e50b9241/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Qualifying Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>6:59</div>
+                                    <div>Qualifying Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/1b371419-2f1e-4717-8e77-e9816b69ee71/5ad9c477-cf1f-4437-a243-56584489752b/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="FP3 Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>2:33</div>
+                                    <div>FP3 Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--..........................Latest video............................-->
+    <div>
+        <h1 style="color: black; text-align: left;">Latest video</h1>
+        <center>
+            <table style="border-top:solid; border-top-width:10px">
+                <tr>
+                    <td>
+                        <a href="#" class="highlights" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/4189ea56-fba5-479e-9d2c-78cec320a855/5abaf23f-f338-4119-afa0-4c86301d698d/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Race Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div style="text-align:left;">8:04</div>
+                                    <div>Race Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/27828fef-3289-4358-a469-fb4a023f22fb/6d13edba-637b-4b13-89ee-9791e50b9241/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="Qualifying Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>6:59</div>
+                                    <div>Qualifying Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none; color: black;">
+                            <div>
+                                <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/1b371419-2f1e-4717-8e77-e9816b69ee71/5ad9c477-cf1f-4437-a243-56584489752b/997x516/match/image.jpg"
+                                     style="width: 400px;" alt="FP3 Highlights Thumbnail">
+                            </div>
+                            <div>
+                                <h2 style="font-size:smaller">
+                                    <div>2:33</div>
+                                    <div>FP3 Highlights: 2024 Las Vegas Grand Prix</div>
+                                </h2>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--Video gallery-->
+    <div>
+        <h1 style="color: black; text-align: left;">Video Gallery</h1>
+        <div class="gallery-container" id="videoGallery">
+            <!-- Video items will be added dynamically here -->
+        </div>
+    </div>
+
+    <script>
+        // Array con i video e le descrizioni
+        const videoData = [
+            { src: "video1.mp4", description: "Video 1: A great journey." },
+            { src: "video2.mp4", description: "Video 2: Exploring the mountains." },
+            { src: "video3.mp4", description: "Video 3: A day in the city." },
+            { src: "video4.mp4", description: "Video 4: Relaxing by the sea." },
+            { src: "video5.mp4", description: "Video 5: Amazing wildlife." },
+            { src: "video6.mp4", description: "Video 6: Adventure in the desert." },
+            { src: "video7.mp4", description: "Video 7: Night sky wonders." },
+            { src: "video8.mp4", description: "Video 8: A peaceful forest." },
+            { src: "video9.mp4", description: "Video 9: A mano d'acciaio" }
+        ];
+
+        // Seleziona il contenitore della galleria
+        const galleryContainer = document.getElementById('videoGallery');
+
+        // Aggiunge i video dinamicamente con le descrizioni
+        videoData.forEach(({ src, description }) => {
+            // Crea l'elemento video-item
+            const videoItem = document.createElement('div');
+            videoItem.className = 'video-item';
+
+            // Crea l'elemento video
+            const video = document.createElement('video');
+            video.controls = true;
+            video.innerHTML = `<source src="${src}" type="video/mp4">Your browser does not support the video tag.`;
+
+            // Crea l'elemento per la descrizione
+            const videoDescription = document.createElement('div');
+            videoDescription.className = 'video-description';
+            videoDescription.textContent = description;
+
+            // Aggiungi il video e la descrizione al video-item
+            videoItem.appendChild(video);
+            videoItem.appendChild(videoDescription);
+
+            // Aggiungi il video-item alla galleria
+            galleryContainer.appendChild(videoItem);
+        });
+    </script>
+</body>
+</html>

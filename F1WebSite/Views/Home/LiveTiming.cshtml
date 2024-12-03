@@ -2,3 +2,305 @@
 @model F1WebSite.Views.Home.LiveTimingModel
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 - It's All To Drive For</title>
+    <style>
+        body {
+            font-family: 'Offside', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 70px;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        /* Contenitore principale per le tabelle */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        /* Tabella sinistra */
+        .table-left {
+            width: 45%;
+            border: solid 1px #ddd;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        .table-left-header {
+            background-color: #d3d3d3;
+            padding: 10px;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+        }
+
+        /* Tabella destra */
+        .table-right {
+            width: 45%;
+            border: solid 1px #ddd;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        .table-right-header {
+            background-color: #505050;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            border-bottom: solid 1px #ddd;
+        }
+
+        /* Celle delle tabelle */
+        .table-cell {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Stile pulsanti */
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            color: black;
+            border: 2px solid grey;
+        }
+
+            .btn-primary:hover {
+                background-color: red;
+                border-color: red;
+                color:white;
+            }
+
+        .btn-highlight {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: 2px solid red;
+        }
+
+            .btn-highlight:hover {
+                background-color: transparent;
+                color: black;
+            }
+
+        /* Stile del banner */
+        .banner {
+            width: 77%;
+            height: 75px;
+            margin: 20px auto;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .banner-link {
+            color: black;
+            font-weight: bold;
+            text-decoration-color: red;
+        }
+
+            .banner-link:hover {
+                color: red;
+                background-color:transparent;
+            }
+
+        .footer-note {
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            Live Timing Data
+        </h1>
+        <br />
+        <h2>
+            MAXIMISE YOUR RACE
+        </h2>
+        <br />
+        <p style="color:white;">
+            Dive into every digit of every session with Live Timing data. Get a bird’s-eye-view of the race with Driver <br />
+            Tracker Map. Know who’s burning rubber with Tyre Data History. And much, much more.
+        </p>
+
+        <div class="flex-container">
+            <!-- Tabella sinistra -->
+            <table class="table-left">
+                <thead>
+                    <tr>
+                        <th class="table-left-header">
+                            <img src="https://media.formula1.com/image/upload/f_auto/q_auto/v1675177930/etc/designs/fom-website/images/f1_logo_fallback.png" style="width:60px;" />
+                            Unlocked
+                            <br /><br />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:22px; padding:10px; color:black;">
+                                Unlock Live Timing <br />
+                                with F1 Unlocked
+                            </h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:18px; padding-left:10px; color:black;">
+                                Test out Live Timing features:
+                            </h2>
+                            <p style="color:black;">
+                                Live leaderboard data <br />
+                                Best clips of team radio <br />
+                                Relative Sector Performance
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:18px; padding-left:10px; color:black;">
+                                F1 Unlocked also gives you access to:
+                            </h2>
+                            <p style="color:black;">
+                                Edge-of-your-seat exclusive F1 content <br />
+                                Dream competitions, rewards and benefits <br />
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <div class="button-container">
+                                <button class="btn-primary">Unlock for Free</button>
+                                <button class="btn-primary">Learn More</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Tabella destra -->
+            <table class="table-right">
+                <thead>
+                    <tr>
+                        <th class="table-right-header">
+                            <img src="https://media.formula1.com/image/upload/f_auto/q_auto/v1675177930/etc/designs/fom-website/images/f1_logo_fallback.png" style="width:60px" />
+                            Tv subscription <br />
+                            <p style="font-size:x-small; color:white;">
+                                More data. More Knowledge
+                            </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:22px; padding:10px; color:black;">
+                                Track every driver in <br />
+                                real time
+                            </h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:18px; padding-left:10px; color:black;">
+                                Test out Live Timing features:
+                            </h2>
+                            <p style="color:black;">
+                                Live leaderboard data <br />
+                                Best clips of team radio <br />
+                                & live audio commentary <br />
+                                Sector performance data and times <br />
+                                Live driver maps <br />
+                                Tyre usage history
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell">
+                            <h2 style="font-size:18px; padding-left:10px; color:black;">
+                                You'll also have access to:
+                            </h2>
+                            <p style="color:black;">
+                                Exclusive shows, documentaries & highlights <br />
+                                650+ historic races from the F1 archives <br />
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <div class="button-container">
+                                <button class="btn-highlight">Subscribe Now*</button>
+                                <button class="btn-primary">Learn More</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="font-size:xx-small; color:black;">
+                                *Subscriptions are only available in certain countries.
+                            </p>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <p class="footer-note">
+                <a href="#" class="banner-link">Register</a> for an account, or
+                <a href="#" class="banner-link">Sign in</a>
+            </p>
+        </div>
+    </center>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>

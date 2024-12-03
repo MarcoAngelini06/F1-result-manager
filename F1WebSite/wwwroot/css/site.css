@@ -1,22 +1,947 @@
+
+.addButton {
+    font-size: 1.2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Driver Page Title */
+.driver-title {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 25px;
+    border-top: 7px solid #000;
+    border-right: 7px solid #000;
+    border-top-right-radius: 15px;
+    margin-right: 25px;
+}
+
+    .driver-title h1 {
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+    }
+
+.popup {
+    display: none;
+    position: fixed; /* Fixes the popup in place */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translateY(-50%); /* Offsets it by half its own height for perfect vertical centering */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Overlay background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Ensure the overlay is just below the popup */
+}
+
+
+.form {
+    font-size: 1rem; /* Set a base font size */
+}
+
+    .form label {
+        color: #000000; /* Set label text color */
+        font-size: 1.1rem; /* Adjust font size for labels */
+        font-weight: bold; /* Make the label text bold */
+        margin-bottom: 5px; /* Add space below labels */
+    }
+
+    .form input[type="text"] {
+        border-radius: 20px; /* Round corners for input fields */
+        padding: 10px; /* Add padding inside input */
+        border: 1px solid #ccc; /* Border color */
+        font-size: 1rem; /* Font size for text inside the input */
+        color: #333; /* Font color for text inside input */
+        width: 100%; /* Make the input field take the full width of its container */
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+        .form input[type="text"]:focus {
+            border-color: #007BFF; /* Change border color when input is focused */
+            outline: none; /* Remove the default outline */
+        }
+
+.show {
+    display: block;
+}
+
+
+/*----------------------------------------------layout---------------------------------------------------*/
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+
+
+.dropbtn {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
 }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    width: 100vw;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: black;
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+/*-----------------------------------------------TEAM--------------------------------------------------------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensures body takes full width */
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none; /* removes the underline */
+    color: inherit; /* makes the text color inherit from the parent (so it doesn't change) */
+}
+
+    /* Style the team-card to ensure it behaves as expected when wrapped in an anchor tag */
+    a.team-card {
+        display: block; /* ensures the anchor takes up the full width and height of the card */
+    }
+
+        /* Prevent hover effects on the anchor link */
+        a.team-card:hover {
+            background-color: transparent; /* Prevent background color change */
+            color: inherit; /* Prevent text color change */
+            box-shadow: none; /* Remove any shadow effects */
+        }
+
+
+
+.team-header {
+    color: #000000;
+    background-color: var(--team-back-color, #808080);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Spreads items across the line */
+    align-items: center; /* Aligns items vertically */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    width: 100%; /* Makes sure the container takes the full width of the screen */
+}
+
+.team-card-container {
+    position: relative; /* Ensure positioned elements like the button align properly */
+    display: flex; /* Layout both button and card in a flex container */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center the card and button */
+    margin: 20px auto; /* Center the container and add spacing */
+    width: fit-content; /* Adjust width based on content */
+}
+
+.team-card {
+    position: relative; /* Make the card the reference point for the button */
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: visible; /* Allow the button to be outside the card */
+    width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+    .team-card:hover {
+        transform: scale(1.05);
+        border-color: var(--team-border-color, #000000); /* Use custom property on hover */
+    }
+
+
+
+
+
+.team-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-logo {
+    width: 50px; /* Set a fixed width for the logo */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed its container's size */
+}
+
+.team-drivers {
+    display: flex; /* Align children side by side */
+    gap: 20px; /* Add space between driver elements */
+    justify-content: center; /* Center the driver elements */
+    padding: 15px;
+    position: relative;
+}
+
+    .team-drivers::before,
+    .team-drivers::after {
+        content: ''; /* Empty content for the line */
+        position: absolute;
+        top: 0; /* Position it at the top of the .team-drivers container */
+        left: 0;
+        width: 100%; /* Make the line span the entire width */
+        height: 2px; /* Adjust the thickness of the line */
+        background-color: #000; /* Line color */
+    }
+
+    .team-drivers::after {
+        bottom: 0;
+    }
+
+.driver {
+    justify-content: center;
+    font-size: 1.2em;
+    white-space: nowrap; /* Prevent text from wrapping */
+    /*overflow: hidden; /* Optional: Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Optional: Add ellipsis (...) for long text */
+    min-width: 100px; /* Ensure consistent sizing */
+    text-align: center;
+    flex: 1; /* Allow flexible sizing */
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 3px;
+}
+
+    .driver p {
+        margin: 5px; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+    }
+
+
+.button {
+    position: absolute;
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%); /* Adjust to center exactly */
+    width: 50px; /* Set the width for the circular button */
+    height: 50px;
+    background-color: #aa1515;
+    color: #ddd;
+    border: none;
+    border-radius: 50%;
+    line-height: 50px; /* Matches the height */
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensure the button stays on top */
+    padding: 0; /* Ensures no extra space affects alignment */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.team-card-container:nth-child(odd) .button {
+    left: -100px;
+}
+
+.team-card-container:nth-child(even) .button {
+    right: -100px;
+}
+
+.team-card-container:hover .button {
+    opacity: 1; /* Show button on hover */
+}
+/*----------------------------------------------------------DRIVER---------------------------------------------------------*/
+
+/* Container for the driver profiles */
+.driver-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between the cards */
+    padding: 40px 20px;
+    justify-items: center; /* Center cards horizontally */
+    /* Driver Card Container */
+}
+
+    .driver-container .driver-card {
+        background-color: var(--team-border-color, #333);
+        border-top: 3px solid #000000;
+        border-right: 3px solid #000000;
+        border-top-right-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Ensure the card takes full width of its grid cell */
+        max-width: 300px; /* Optional: Restrict the max width of each card */
+        padding: 30px;
+        text-align: left; /* Ensures all content in the card is left-aligned */
+    }
+
+        .driver-container .driver-card .driver-name {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Vertically center both name and flag */
+            justify-content: space-between; /* Space between the name and flag */
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #000;
+            line-height: 1.5; /* Adjust line height */
+            width: 100%; /* Make the container span full width */
+        }
+
+.driver-name p {
+    margin: 5px; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+.flag {
+    width: 35px; /* Set flag size */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 10px; /* Space between name and flag */
+    margin: 5px; /* Remove default margins */
+}
+
+
+
+/* Optional: Remove text alignment as it's redundant with flexbox */
+.driver-info {
+    text-align: center; /* Ensures all content inside the driver-info section is centered */
+    width: 100%; /* Ensures the driver-info container takes up full width */
+}
+
+.driver-number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1; /* Adjust line height */
+    width: 80%; /* Make the container span full width */
+    color: #000;
+}
+
+
+.driver-image {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+    .driver-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image fits without distortion */
+    }
+
+
+.driver-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.driver-stat {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #555;
+}
+
+    .driver-stat span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+    }
+    /*-------------------------------------------------------F1UNLOKED-------------------------------------------------------------*/
+
+
+.banner {
+    background-image: url('https://media.formula1.com/image/upload/f_auto/q_auto/v1678279482/content/dam/fom-website/Unlocked2023/Website%20Header%201920x1080_2.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px; /* Rounded corners for banner */
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for better visual effect */
+}
+
+.banner-title {
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.banner-text {
+    font-size: small;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+button {
+    border: solid 2px red;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: red;
+        color: white;
+    }
+
+.bannerbutton {
+    border: solid 2px lightgray;
+    color: lightgray;
+    background-color: transparent;
+}
+
+    .bannerbutton:hover {
+        border-color: white;
+        color: white;
+        background-color: transparent;
+    }
+
+/* Styling for the main content section */
+.main-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.main-header {
+    font-size: 60px;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.main-description {
+    font-size: small;
+    color: white;
+}
+
+/* Styling for the sections with tables */
+.section-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+    .section-table td, .section-table th {
+        padding: 15px;
+    }
+
+    .section-table th {
+        background-color: #fff; /* Remove gray background */
+        text-align: left;
+    }
+
+    .section-table td {
+        font-size: small;
+    }
+
+/* Section header and content inside tables */
+.section-title {
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    border: solid 2px red;
+    border-radius: 5px;
+    background-color: transparent;
+    color: red;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .cta-button:hover {
+        background-color: red;
+        color: white;
+    }
+
+/* Footer */
+.footer-message {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-box {
+    background-color: white;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: lightgray;
+    padding: 20px;
+}
+
+.footer-text {
+    font-size: small;
+    color: gray;
+}
+
+/* Style for images inside the table */
+.section-table img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for better visual effect */
+}
+
+/*----------------------------------------------------INDEX----------------------------------------------------------*/
+
+
+/* Banner nero */
+.black-banner {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Allinea verticalmente gli elementi */
+    justify-content: flex-start;
+    gap: 10px; /* Aggiungi spazio tra immagine e testo */
+}
+
+    .black-banner img {
+        border-radius: 10px;
+        width: 120px; /* Impostare una larghezza fissa per l'immagine */
+        border-top: solid;
+        border-right: solid;
+        border-radius: 10px;
+    }
+
+    .black-banner h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .black-banner h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+/* Tabella migliorata */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    table td {
+        padding: 15px;
+        vertical-align: top;
+    }
+
+    table img {
+        width: 100%; /* Adatta l'immagine alla larghezza della cella */
+        border-radius: 10px;
+    }
+
+    table button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+        table button:hover {
+            background-color: #666;
+        }
+
+/* Applicare sticky alla didascalia e all'immagine */
+.sticky-container {
+    position: sticky;
+    top: 20px; /* Distanza dall'alto quando l'elemento diventa sticky */
+    z-index: 10;
+    border-top: solid;
+    border-right: solid;
+    border-top-right-radius: 15px;
+}
+
+.sticky-caption {
+    font-size: 18px;
+    font-weight: bold;
+    bottom: 50px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid black; /* Border bottom */
+    padding-bottom: 10px; /* Distanza tra la didascalia e l'immagine */
+    width: 100%; /* Fa sì che il bordo copra tutta la larghezza */
+}
+
+.stickyimg {
+    width: 100%; /* Adatta l'immagine */
+}
+
+.violet-label {
+    color: white; /* Colore del testo */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), /* Trasparente a metà */
+    #5603CD 45%), /* Colore viola a destra */
+    url('https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1280,t_16by9Centre/fom-website/2024/Promo%20atom%20images/pulling_champ_01122024') no-repeat left center;
+    background-size: contain;
+    background-position: right center;
+    padding: 10px 20px; /* Spaziatura interna */
+    border-radius: 15px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo */
+    font-weight: bold; /* Testo in grassetto */
+    width: 100%;
+    padding: 40px;
+    border-left-color: transparent;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per il bordo */
+    margin: 20px; /* Aggiungi margine per sep*/
+}
+
+.violet-label2 {
+    color: white; /* Colore del testo */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), /* Trasparente a metà */
+    #5603CD 45%), /* Colore viola a destra */
+    url('https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_640,t_16by9Centre/fom-website/2024/Promo%20atom%20images/tech_talk_30112024') no-repeat left center;
+    background-size: contain;
+    background-position: right center;
+    padding: 10px 20px; /* Spaziatura interna */
+    border-radius: 15px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo */
+    font-weight: bold; /* Testo in grassetto */
+    width: 100%;
+    padding: 40px;
+    border-left-color: transparent;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per il bordo */
+    margin: 20px; /* Aggiungi margine per sep*/
+}
+/*---------------------------------------------------------LandingPage----------------------------------------------------------*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #111;
+}
+
+    .header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff1801;
+    }
+
+.nav a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+    .nav a:hover {
+        color: #fff;
+    }
+
+.extras {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+    .hero h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #ff1801;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .hero button:hover {
+            background: #e31600;
+        }
+
+.news {
+    padding: 20px;
+    background: #111;
+}
+
+    .news h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.news-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-item {
+    width: 300px;
+    text-align: center;
+}
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+.events {
+    padding: 20px;
+    background: #222;
+}
+
+    .events h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.event-item {
+    margin: 10px auto;
+    text-align: center;
+}
+
+    .event-item button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background: #ff1801;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .event-item button:hover {
+            background: #e31600;
+        }
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+
+    .footer .socials a {
+        margin: 0 10px;
+        color: #ccc;
+        text-decoration: none;
+    }
+
+        .footer .socials a:hover {
+            color: #fff;
+        }
+/*-------------------------------------------------Result-----------------------------------------------------*/
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.race-results-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.race-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    .race-results-table th,
+    .race-results-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .race-results-table th {
+        background-color: #f5f5f5;
+    }
+
+    .race-results-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .race-results-table td {
+        text-align: center;
+    }
+
+        .race-results-table td span {
+            color: red;
+            font-weight: bold;
+        }
+/*-----------------------------------------------------Race------------------------------------------------*/
+a {
+    text-decoration: none; /* removes the underline */
+    color: inherit; /* makes the text color inherit from the parent (so it doesn't change) */
+}
+
+    /* Style the team-card to ensure it behaves as expected when wrapped in an anchor tag */
+    a.race-card {
+        display: block; /* ensures the anchor takes up the full width and height of the card */
+    }
+
+        /* Prevent hover effects on the anchor link */
+        a.race-card:hover {
+            background-color: transparent; /* Prevent background color change */
+            color: inherit; /* Prevent text color change */
+            box-shadow: none; /* Remove any shadow effects */
+        }
+
+.race-card {
+    position: relative;
+    background: #fff;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-top-right-radius: 10px;
+    width: 600px; /* Increase the width for a larger card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Add padding for better spacing */
+}
+
+    .race-card:hover {
+        transform: scale(1.05);
+      
+    }
+.race-card-link {
+    background-color: #fff; /* Use the default color of the parent element */
+    text-decoration: none; /* Remove underline or other decorations */
+}
+
+   
+.race-header {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .race-header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+.race-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.race-details {
+    flex-grow: 1;
+}
+
+    .race-details p {
+        margin: 5px 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+        .race-details p strong {
+            font-weight: bold;
+        }
+
+
+
+

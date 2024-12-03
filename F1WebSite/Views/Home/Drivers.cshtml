@@ -19,7 +19,7 @@
             Check out this season's official F1 line-up. Full breakdown of drivers, points, and current positions.
             Follow your favourite F1 drivers on and off the track.
         </p>
-        <button id="addDriverButton" class="addButton" onclick="togglePopup()">+</button>@* opens a pop-up with a form that asks the driver info *@
+        <button id="addDriverButton" class="addButton" onclick="togglePopup()">Add a new Driver</button>@* opens a pop-up with a form that asks the driver info *@
 
         <div id="myPopup" class="popup">
             <div class="popup-content">
@@ -75,13 +75,18 @@
                         <div class="driver-name">
                             <p>@driver.name @driver.surname</p>
                             <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/@driver.Nationality-flag.png"
-                                 alt="@driver.Nationality" class="flag" />
+                                 alt="@driver.Nationality" class="flag"                               
+                                 onerror="this.style.display='none';" />
                         </div>
                     </div>
                     <div class="driver-image">
                         <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/@driver.surname"
-                             alt="@driver.name" />
+                             alt="@driver.name @driver.surname"
+                             class="team-logo"
+                             onerror="this.src='/img/Unknown_person.jpg'; this.onerror=null;" />
                     </div>
+
+
                     <div class="driver-number">
                         <p>@driver.Number</p>
                         <p>@currentTeam.TeamName</p>

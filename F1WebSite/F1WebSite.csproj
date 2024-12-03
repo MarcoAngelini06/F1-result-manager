@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\img\f1_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\f1_logo.png" />
+    <None Include="wwwroot\img\OIP.jpg" />
   </ItemGroup>
 
 </Project>

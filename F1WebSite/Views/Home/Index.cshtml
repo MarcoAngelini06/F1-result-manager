@@ -1,77 +1,316 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1 Clone</title>
-    <link rel="stylesheet" href="~/css/LandingPage.css">
+    <title>Get Involved</title>
+    <link rel="stylesheet" href="~/css/indexStyle.css" asp-append-version="true" />
+
 </head>
 <body>
-   
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Excitement Starts Here</h1>
-            <p>Experience the thrill of Formula 1.</p>
-            <button>Learn More</button>
+    <div class="black-banner">
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_112,q_auto/f_auto/q_auto/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar" alt="Qatar" />
+        <div>
+            <h1>Qatar 2024</h1>
+            <h3>Race debrief</h3>
         </div>
-    </section>
+    </div>
 
-    <!-- News Section -->
-    <section class="news">
-        <h2>Latest News</h2>
-        <div class="news-grid">
-            <div class="news-item">
-                <img src="https://via.placeholder.com/300" alt="News Image">
-                <h3>Race Highlights</h3>
-                <p>Catch up on the latest action from the track.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://via.placeholder.com/300" alt="News Image">
-                <h3>Driver Spotlight</h3>
-                <p>Get to know your favorite drivers better.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://via.placeholder.com/300" alt="News Image">
-                <h3>Team Insights</h3>
-                <p>Behind the scenes with the top teams.</p>
-            </div>
-        </div>
-    </section>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    Verstappen victorious from Leclerc and Piastri as penalty leaves Norris 10th
+                </div>
+                <div>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div>
+                    <button>Watch Highlights</button>
+                    <button>Watch Highlights</button>
+                </div>
+            </td>
+            <td>
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187724891" alt="Qatar race image" style="width:300px; " />
+                <p>Event details and <br /> highlights of the race</p>
+            </td>
+            <td>
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187724891" alt="Qatar race image" style="width:300px; " />
+                <p>Post-race interviews and <br /> analysis of the performance</p>
+            </td>
+        </tr>
+    </table>
 
-    <!-- Upcoming Events -->
-    <section class="events">
-        <h2>Upcoming Events</h2>
-        <div class="event-item">
-            <p><strong>Grand Prix</strong> - Abu Dhabi</p>
-            <p>Date: December 3, 2024</p>
-            <button>Buy Tickets</button>
-        </div>
-        <div class="event-item">
-            <p><strong>Grand Prix</strong> - Bahrain</p>
-            <p>Date: March 16, 2025</p>
-            <button>Buy Tickets</button>
-        </div>
-        <div class="event-item">
-            <p><strong>Grand Prix</strong> - Australia</p>
-            <p>Date: March 31, 2025</p>
-            <button>Buy Tickets</button>
-        </div>
-    </section>
+    <table>
+        <tr>
+            <td>
+                <!-- sticky-container per didascalia e immagine -->
+                <div class="sticky-container">
+                    <div class="sticky-caption">
+                        Feature ANALYSIS: Why Alpine chose to release Ocon with one race left and give Doohan his debut in Abu Dhabi
+                    </div>
+                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320,t_16by9Centre/fom-website/2024/Alpine/Formula%201%20header%20template%20-%202024-12-02T123256.940" alt="Alternate Text" class="stickyimg" />
+                </div>
+            </td>
+            <td>
+                <!--news-->
+                <table style="border-spacing: 5px;">
+                    <tr style="padding:2px;">
+                        <td style="padding:5px;">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Qatar/Formula%201%20header%20template%20-%202024-12-02T105556.705" style="width:300px;" />
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Formula 1 Clone. All rights reserved.</p>
-        <div class="socials">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+                        </td>
+                        <td style="padding:5px;">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9South,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187746020" alt="Alternate Text" style="width:300px;" />
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="padding:2px;">
+                        <td style="padding:5px;">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Miscellaneous/Formula%201%20header%20template%20(7)" style="width:300px;" />
+
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
+                        </td>
+                        <td style="padding:5px;">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Brazil___Sprint__Qualifying/2182484377" style="width:300px;" />
+
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="padding:2px;">
+                        <td style="padding:5px;">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Qatar/MMD_Qatar_02122024" style="width:300px;" />
+
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
+                        </td>
+                        <td style="padding:5px;">
+                            <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/ce9409b6-773b-4fad-af14-aa75390a0385/8efec571-9ae5-4a0b-a192-7a18f5388d79/997x516/match/image.jpg" style="width:300px;" />
+
+                            <div style="border-bottom:solid;border-right:solid;border-bottom-right-radius:15px;padding:5px;">
+                                <p>
+                                    News <br />
+                                    Verstappen says he ‘lost all respect’<br />
+                                    for Russell after stewards’ hearing in<br />
+                                    Qatar over qualifying incident
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button>View latest news</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div style="border:solid;border-color:#5603CD;border-left-color:transparent;border-top-right-radius:15px;border-bottom-right-radius:15px;padding-right:40px;border-width:10px;">
+        <label class="violet-label">
+            <h1>
+                Abbi Pulling wins 2024 F1
+                <br />ACADEMY
+            </h1>
+            <h3>
+                Alpine driver Abbi Pulling takes P2 in<br />
+                Race 1 at the Lusail International <br />
+                Circuit to become the 2024 champion.
+            </h3>
+            <button style="background-color:white;border-color:white;border-radius:5px;">
+                Watch now
+            </button>
+        </label>
+    </div>
+    <!--Editors pick-->
+    <h1 style="margin-top:30px;">
+        Editor's Picks
+    </h1>
+    <div style="border:solid;border-color:red;border-left-color:transparent; margin:40px;border-width:10px;border-radius:15px;margin-top:0px;">
+
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/8382b094-4a8d-4719-a656-3afa74e3818f/156bd909-72ac-47f9-9c65-f8f3b6553de6/997x516/match/image.jpg" alt="Alternate Text" />
+                    </div>
+                    <div>
+                        Video
+                        WATCH: F1 for beginners – Everything you need to know about F1
+                    </div>
+                </td>
+                <td>
+                    <table style="font-size:small">
+                        <tr>
+                            <td>
+                                <div>
+                                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Qatar/MMD_Qatar_02122024" alt="Alternate Text" style="width:300px" />
+                                </div>
+                                <div>
+                                    FeatureF1 Unlocked <br />
+                                    MONDAY MORNING DEBRIEF: How <br />the Qatar GP ended up being far <br />better than damage limitation for <br />Ferrari
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/ce9409b6-773b-4fad-af14-aa75390a0385/8efec571-9ae5-4a0b-a192-7a18f5388d79/997x516/match/image.jpg" alt="Alternate Text" style="width:300px" />
+                                </div>
+                                <div>
+                                    Video<br />
+                                    HIGHLIGHTS: Relive the action from a <br />thrilling Qatar Grand Prix as <br />Verstappen wins ahead of Leclerc and <br />Piastri
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    Feature<br />
+                                    20 YEARS ON: The inside story of<br /> Lewis Hamilton’s first F1 test with<br /> McLaren
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    FeatureF1 Unlocked<br />
+                                    TREMAYNE: The 2024 McLaren vs<br /> Ferrari title fight is the latest chapter<br /> of the biggest team rivalry in F1
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--asdkfòas-->
+    <div style="border:solid;border-color:#5603CD;border-left-color:transparent;border-top-right-radius:15px;border-bottom-right-radius:15px;padding-right:40px;border-width:10px;">
+        <label class="violet-label2">
+            <h1>
+                TECH TALK – The evolution
+                <br /> of a champion's car |
+                <br /> Crypto.com
+            </h1>
+            <h3>
+                F1 technical expert Sam Collins examines<br /> how Max Verstappen's championship-winning RB2<br />0 developed through the 2024 season.<br />
+
+            </h3>
+            <button style="background-color:white;border-color:white;border-radius:5px;">
+                Watch now
+            </button>
+        </label>
+    </div>
+    <!--More news-->
+    <div>
+        <h1>
+            More news
+        </h1>
+        <div style="border-top:solid,black;">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <div>
+                                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9South,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187736378" style="width:300px;" />
+                            </div>
+                            <div style="border:solid,gray;border-radius:10px;borderlet">
+                                <h3 style="font-size:smaller">
+                                    News
+                                    Gasly ‘gave absolutely everything’ to secure Qatar top-five finish as Alpine's <br />P6 hopes handed a boost
+                                </h3>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar___Sprint__Qualifying/2187587065" style="width:300px;" />
+                            </div>
+                            <div>
+                                <h3 style="font-size:smaller">
+                                    News
+
+                                    Perez explains reasons behind his <br /> Qatar GP spin as promising start ended<br /> in retirement
+                                </h3>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187729661" style="width:300px;" />
+                            </div>
+                            <div>
+                                <h3 style="font-size:smaller">
+                                    News
+                                    Piastri reflects on ‘painful’<br /> Safety Car timing in Qatar as he prepares<br /> for constructors’ battle to ‘go down to the<br /> wire’
+                                </h3>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187736542" style="width:300px;" />
+                            </div>
+                            <div>
+                                <h3 style="font-size:smaller">
+                                    Feature
+                                    What the teams said – Race day in<br /> Qatar
+
+
+                                </h3>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </footer>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
 </body>
 </html>

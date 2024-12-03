@@ -11,7 +11,7 @@ namespace F1WebSite.ViewModels
         public List<Season> Seasons { get; set; }
         public List<RaceResult> RaceResults { get; set; }
         public List<Result> Results { get; set; }
-        public List<DriverTeam> DriverTeam {  get; set; }
+        public List<DriverTeam> DriverTeams {  get; set; }
         public int RaceId { get; set; } 
 
 

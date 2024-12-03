@@ -8,12 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/styleRace.css">
-    <link rel="stylesheet" href="~/css/shared.css">
+    <script src="~/js/site.js" defer></script> 
+
 </head>
 <body>
     <div class="driver-title">
         <h1>F1 Races</h1>
+        <button id="addRaceButton" class="addButton" onclick="togglePopup()">Add a new Driver</button>@* opens a pop-up with a form that asks the driver info *@
+
         <select id="seasonTG" name="seasonTG" required onchange="filterRaces()">
             <option value="" disabled selected>Season:</option>
             @foreach (var season in Model.Seasons)
@@ -21,7 +23,6 @@
                 <option value="@season.seasonId">@season.year</option>
             }
         </select>
-        <button id="addRaceButton" class="addButton" onclick="togglePopup()">+</button>@* opens a pop-up with a form that asks the race info *@
 
         <div id="myPopup" class="popup">
             <div class="popup-content">
@@ -58,16 +59,15 @@
     <div class="race-card-container" id="raceCardContainer">
         @foreach (var race in Model.Races)
         {
+            Tracks track = Model.Tracks.FirstOrDefault(t => t.trackId == race.trackId);
             <div class="race-card" data-season="@race.season">
-                <a href="@Url.Action("Result", "Home", new {race.Id})" class="race-card-link" style="--race-border-color: #FF4500;">
+                <a href="@Url.Action("Result", "Home", new { race.Id })" class="race-card">
                     <div class="race-header">
                         <h1>@race.name</h1>
                     </div>
-
-                    <div class="race-details">
-                        @{
-                            DateTime raceDate;
-                            if (DateTime.TryParse(race.date, out raceDate))
+                    <div class="race-content">
+                        <div class="race-details">
+                            @if (DateTime.TryParse(race.date, out var raceDate))
                             {
                                 <p><strong>Date:</strong> @raceDate.ToString("yyyy-MM-dd")</p>
                             }
@@ -75,72 +75,71 @@
                             {
                                 <p><strong>Date:</strong> Invalid date</p>
                             }
-                        }
-                        <p><strong>Laps:</strong> @race.laps</p>
-                        @{
-                            var currentTrack = Model.Tracks.FirstOrDefault(t => t.trackId == race.trackId);
-                        }
-                        <p><strong>Track:</strong> @currentTrack.name</p>
+                            <p><strong>Laps:</strong> @race.laps</p>
+                            <p><strong>Track:</strong> @(track?.name ?? "Unknown Track")</p>
+                        </div>
+                        
                     </div>
                 </a>
             </div>
         }
+        <script>
+                        function filterRaces() {
+                const selectedSeason = document.getElementById("seasonTG").value;
+                const raceCards = document.querySelectorAll(".race-card");
+
+                raceCards.forEach(card => {
+                    const raceSeason = card.getAttribute("data-season");
+                    if (selectedSeason === "" || raceSeason === selectedSeason) {
+                        card.style.display = "block"; // Show the card
+                    } else {
+                        card.style.display = "none"; // Hide the card
+                    }
+                });
+            }
+            function togglePopup() {
+                document.getElementById("myPopup").style.display = "block";
+                document.querySelector(".overlay").style.display = "block";
+            }
+
+            function submitDriver() {
+                var race = {
+                    name: document.getElementById('name').value,
+                    laps: document.getElementById('laps').value,
+                    date: document.getElementById('date').value,
+                    trackId: document.getElementById('track').value // Fix: Use .value to get the selected track ID
+                };
+
+                // Log all race details for debugging
+                console.log("Race Details:", race);
+
+                // Validation to ensure all fields are filled
+                if (!race.name || !race.laps || !race.date || !race.trackId) {
+                    alert("All fields are required!");
+                    return;
+                }
+
+                // Construct the URL to send data to the server
+                var url = '@Url.Action("AddRace", "Home")' +
+                    '?name=' + encodeURIComponent(race.name) +
+                    '&laps=' + encodeURIComponent(race.laps) +
+                    '&date=' + encodeURIComponent(race.date) +
+                    '&trackId=' + encodeURIComponent(race.trackId);
+
+                console.log("Redirecting to:", url); // Log the URL for debugging
+
+                // Redirect to the server endpoint
+                window.location.href = url;
+            }
+
+
+            function closePopup() {
+                document.getElementById("myPopup").style.display = "none";
+                document.querySelector(".overlay").style.display = "none";
+            }
+        </script>
+
     </div>
 
-    <script>
-            // Function to handle filtering the races based on selected season
-        function filterRaces() {
-            const selectedSeason = document.getElementById("seasonTG").value;
-            const raceCards = document.querySelectorAll(".race-card");
-
-            raceCards.forEach(card => {
-                const raceSeason = card.getAttribute("data-season");
-                if (selectedSeason === "" || raceSeason === selectedSeason) {
-                    card.style.display = "block"; // Show the card
-                } else {
-                    card.style.display = "none"; // Hide the card
-                }
-            });
-            }
-        function togglePopup() {
-            document.getElementById("myPopup").style.display = "block";
-            document.querySelector(".overlay").style.display = "block";
-        }
-
-                function submitDriver() {
-            var race = {
-                name: document.getElementById('name').value,
-                laps: document.getElementById('laps').value,
-                date: document.getElementById('date').value,
-                trackId: document.getElementById('track').value // Fix: Use .value to get the selected track ID
-            };
-
-            // Log all race details for debugging
-            console.log("Race Details:", race);
-
-            // Validation to ensure all fields are filled
-            if (!race.name || !race.laps || !race.date || !race.trackId) {
-                alert("All fields are required!");
-                return;
-            }
-
-            // Construct the URL to send data to the server
-            var url = '@Url.Action("AddRace", "Home")' +
-                      '?name=' + encodeURIComponent(race.name) +
-                      '&laps=' + encodeURIComponent(race.laps) +
-                      '&date=' + encodeURIComponent(race.date) +
-                      '&trackId=' + encodeURIComponent(race.trackId);
-
-            console.log("Redirecting to:", url); // Log the URL for debugging
-
-            // Redirect to the server endpoint
-            window.location.href = url;
-        }
-
-
-        function closePopup() {
-            document.getElementById("myPopup").style.display = "none";
-            document.querySelector(".overlay").style.display = "none";
-        }
-    </script>
+  
 </body>

@@ -54,7 +54,8 @@ SELECT DISTINCT
     DriverTeam.DriverTeamId,
     Teams.teamId,
 	DriverTeam.driver,
-    DriverTeam.season
+    DriverTeam.season,
+    DriverTeam.points
 FROM [F1].[dbo].[Teams] LEFT JOIN DriverTeam ON(Teams.teamId=DriverTeam.Team);";
             using (var conn = new SqlConnection(_connectionString))
             {
@@ -70,7 +71,8 @@ SELECT DISTINCT
 Tracks.trackId,
  Tracks.[name],
 Tracks.city,
-Tracks.country
+Tracks.country,
+Tracks.layout
 FROM Tracks;";
             using (var conn = new SqlConnection(_connectionString))
             {
@@ -222,10 +224,21 @@ ORDER BY Drivers.Id DESC;";
                 NPitStops = nPitStops,
                 Ppoints = points
             };
+            List<DriverTeam> driverTeamList = GetDriverTeams();
+            DriverTeam currDT = driverTeamList.FirstOrDefault(d => d.driverTeamId == driverTeamId);
+            currDT.points = currDT.points + points;
+
+            string queryUpdate = "UPDATE DriverTeam SET points = @Points WHERE driverTeamId=@ID;";
+            var updateDriverTeam = new
+            {
+                Points = currDT.points,
+                ID = driverTeamId,
+            };
             using (var conn = new SqlConnection(_connectionString))
             {
 
                 conn.Execute(query, newResult);
+                conn.Execute(queryUpdate,updateDriverTeam);
             }
         }
         public void InsertNewRaceResult(int raceId)

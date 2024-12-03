@@ -38,7 +38,7 @@
                     if(RaceResult.race==Model.RaceId)
                     {
                         Result result = Model.Results.FirstOrDefault(r => r.resultId == RaceResult.result);
-                        DriverTeam currDriverTeam = Model.DriverTeam.FirstOrDefault(d => d.driverTeamId == result.DriverTeam);
+                        DriverTeam currDriverTeam = Model.DriverTeams.FirstOrDefault(d => d.driverTeamId == result.DriverTeam);
                         Drivers driver = Model.Drivers.FirstOrDefault(d => d.Id == currDriverTeam.driver);
                         Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == driver.teamId);
                         <tr>

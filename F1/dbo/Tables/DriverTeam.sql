@@ -6,5 +6,6 @@
     [Season] INT NULL
     CONSTRAINT FK_DriverTeam_Teams_Team FOREIGN KEY  (Team) REFERENCES Teams([teamId])  
     CONSTRAINT FK_DriverTeam_Drivers_Id FOREIGN KEY (Driver) REFERENCES Drivers(Id)
-    CONSTRAINT FK_DriverTeam_Season_Id FOREIGN KEY ([Season]) REFERENCES Season(seasonId)
+    CONSTRAINT FK_DriverTeam_Season_Id FOREIGN KEY ([Season]) REFERENCES Season(seasonId), 
+    [Points] INT NULL
 )

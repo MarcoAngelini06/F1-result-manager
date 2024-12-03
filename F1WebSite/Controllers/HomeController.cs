@@ -34,9 +34,9 @@ namespace F1WebSite.Controllers
             List<Drivers> driversList = _dbAccess.GetDriverList();
             List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
             List<Team> teamsList = _dbAccess.GetTeamList();
-            foreach (DriverTeam d in driverTeamList) 
+            foreach (DriverTeam d in driverTeamList) //checking if the team has relations, if it doesn't it is deletable
             {
-                if (d.driver == null)
+                if (d.driver == 0)
                 {
                     Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
                     currentTeam.isDeletable = true;
@@ -44,8 +44,9 @@ namespace F1WebSite.Controllers
             }
             var model = new DriversViewModel
             {
-                Drivers = driversList,
+                Drivers = driversList,//asigning values to the lists in the viewModel
                 Teams = teamsList,
+                DriverTeams = driverTeamList,
             };
 
             return View(model);
@@ -53,25 +54,7 @@ namespace F1WebSite.Controllers
         public IActionResult RemoveTeam(string teamName)
         {
             _dbAccess.RemoveTeam(teamName);
-
-            List<Drivers> driversList = _dbAccess.GetDriverList();
-            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
-            List<Team> teamsList = _dbAccess.GetTeamList();
-            foreach (DriverTeam d in driverTeamList)
-            {
-                if (d.driver == null)
-                {
-                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
-                    currentTeam.isDeletable = true;
-                }
-            }
-            var model = new DriversViewModel
-            {
-                Drivers = driversList,
-                Teams = teamsList,
-            };
-
-            return View("Teams", model);
+            return RedirectToAction("Teams"); // Redirect to the Teams action to refresh the page
         }
 
         [HttpGet]
@@ -79,25 +62,22 @@ namespace F1WebSite.Controllers
         {
             _dbAccess.InsertNewTeam(teamName);
 
+            return RedirectToAction("Teams"); // Redirect to the Teams action to refresh the page
+        }
+        public IActionResult Drivers()
+        {
             List<Drivers> driversList = _dbAccess.GetDriverList();
-            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
             List<Team> teamsList = _dbAccess.GetTeamList();
-            foreach (DriverTeam d in driverTeamList)
-            {
-                if (d.driver == null)
-                {
-                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
-                    currentTeam.isDeletable = true;
-                }
-            }
-            teamsList = _dbAccess.GetTeamList();
+            List<Season> seasonList = _dbAccess.GetSeasonList();
+
             var model = new DriversViewModel
             {
                 Drivers = driversList,
                 Teams = teamsList,
+                Seasons = seasonList,
             };
 
-            return View("Teams", model);
+            return View(model);
         }
         [HttpGet]
         public IActionResult AddDriver(string name, string surname, string number, string nationality, int teamID,int seasonId)
@@ -109,29 +89,25 @@ namespace F1WebSite.Controllers
             driverToAdd.Number = number;
             driverToAdd.teamId = teamID;
             _dbAccess.InsertNewDriver(driverToAdd,seasonId);
-
-            List<Drivers> driversList = _dbAccess.GetDriverList();
-            List<DriverTeam> driverTeamList = _dbAccess.GetDriverTeams();
-            List<Team> teamsList = _dbAccess.GetTeamList();
-            List<Season> seasonList = _dbAccess.GetSeasonList();
-            foreach (DriverTeam d in driverTeamList)
-            {
-                if (d.driver == null)
-                {
-                    Team currentTeam = teamsList.FirstOrDefault(t => t.teamId == d.teamId);
-                    currentTeam.isDeletable = true;
-                }
-            }
-            var model = new DriversViewModel
-            {
-                Drivers = driversList,
-                Teams = teamsList,
-                Seasons = seasonList,
-            };
-
-            return View("Drivers", model);
+            return RedirectToAction("Drivers"); // Redirect to the Teams action to refresh the page
         }
 
+        public IActionResult Races()
+        {
+
+            List<Tracks> tracksList = _dbAccess.GetTracksList();
+            List<Races> racesList = _dbAccess.GetRaceList();
+            List<Season> seasonsList = _dbAccess.GetSeasonList();
+
+            var model = new DriversViewModel
+            {
+                Tracks = tracksList,
+                Races = racesList,
+                Seasons = seasonsList,
+            };
+
+            return View(model);
+        }
         [HttpGet]
         public IActionResult AddRace(string name, string date, int laps,int trackId)
         {
@@ -152,7 +128,7 @@ namespace F1WebSite.Controllers
                 Seasons = seasonsList,
             };
 
-            return View("races",model);
+            return RedirectToAction("Races"); // Redirect to the Teams action to refresh the page
         }
         public IActionResult Video()
         {
@@ -170,30 +146,8 @@ namespace F1WebSite.Controllers
         {
             return View();
         }
-        public IActionResult Results()
-        {
-            return View();
-        }
-        public IActionResult Drivers(int? teamId)
-        {
-            List<Drivers> driversList = _dbAccess.GetDriverList();
-            List<Team> teamsList = _dbAccess.GetTeamList();
-            List<Season> seasonList = _dbAccess.GetSeasonList();
 
 
-            if (teamId.HasValue)
-            {
-                driversList = driversList.Where(d => d.teamId == teamId.Value).ToList();
-            }
-            var model = new DriversViewModel
-            {
-                Drivers = driversList,
-                Teams = teamsList,
-                Seasons = seasonList,
-            };
-
-            return View(model);
-        }
         public IActionResult DriverTeam(int? teamId)
         {
             List<Drivers> driversList = _dbAccess.GetDriverList();
@@ -212,22 +166,7 @@ namespace F1WebSite.Controllers
 
             return View(model);
         }
-        public IActionResult Races()
-        {
-
-            List<Tracks> tracksList = _dbAccess.GetTracksList();
-            List<Races> racesList = _dbAccess.GetRaceList();
-            List<Season> seasonsList= _dbAccess.GetSeasonList();
-     
-            var model = new DriversViewModel
-            {
-                Tracks = tracksList,
-                Races = racesList,
-                Seasons = seasonsList,
-            };
-
-            return View(model);
-        }
+        
         public IActionResult liveTiming()
         {
             return View();
@@ -243,41 +182,40 @@ namespace F1WebSite.Controllers
             List<Result> results = _dbAccess.GetResults();
             List<RaceResult> RaceResultsList = _dbAccess.GetRaceResult();
 
-            RaceResult RaceMatch = RaceResultsList.FirstOrDefault(d => d.race == Id);
+            RaceResult RaceResultMatch = RaceResultsList.FirstOrDefault(d => d.race == Id);
             Random random = new Random();
 
-            if (RaceMatch == null || RaceMatch.result == null)//creating new results only if there aren't any
+            if (RaceResultMatch == null)//creating new results only if there aren't any
             {
                 Races currentRace = racesList.FirstOrDefault(r => r.Id == Id);
                 List<Drivers> availableDrivers = new List<Drivers>();
                 List<int> points = new List<int> { 0, 25, 18, 15, 12, 10, 8, 6, 4, 2, 1 };
-                foreach (Drivers driver in driversList)
+
+                foreach (Drivers driver in driversList)// selecting only the drivers in the same season as the race
                 {
                     DriverTeam currentDriverTeam = driverTeamList.FirstOrDefault(d => d.driverTeamId == driver.DriverTeamId);
 
                     if (driver.name != null && currentDriverTeam.season == currentRace.season) 
                     {
-                        availableDrivers.Add(driver);// selecting only the drivers in the same season as the race
+                        availableDrivers.Add(driver);
                     }
                     
                 }
                 availableDrivers = availableDrivers.OrderBy(x => random.Next()).ToList();//shuffling the order
                 int i = 1;
-                foreach (Drivers d in availableDrivers)
+                foreach (Drivers d in availableDrivers)//asigning the result to each driver
                 {
                     Result currentResult = new Result();
                     currentResult.DriverTeam = d.DriverTeamId;
                     currentResult.NPitStops = random.Next(1, 4);
                     currentResult.FinishingPosition = i;
                     if(i<=10)
-                    {
                         currentResult.Points = points[i];
-                        currentResult.Laps= currentRace.laps;
-                    }else
-                        currentResult.Laps = random.Next(1, currentRace.laps);
 
-                    // Insert the result into the database
-                    _dbAccess.InsertNewResult(d.DriverTeamId, currentResult.NPitStops, currentResult.Laps, currentResult.FinishingPosition,currentResult.Points);
+                        currentResult.Laps = currentRace.laps;
+
+                        // Insert the result into the database
+                        _dbAccess.InsertNewResult(d.DriverTeamId, currentResult.NPitStops, currentResult.Laps, currentResult.FinishingPosition,currentResult.Points);
                     _dbAccess.InsertNewRaceResult(Id);
                     i++;
                 }
@@ -298,7 +236,7 @@ namespace F1WebSite.Controllers
                 Teams = teamsList,
                 Results = results,
                 RaceResults = sortedRaceResults,
-                DriverTeam = driverTeamList,
+                DriverTeams = driverTeamList,
                 RaceId = Id
             };
                 return View("RaceResults", model);
@@ -308,7 +246,23 @@ namespace F1WebSite.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult itsalltodrivefor()
+        {
+            return View();
+        }
+        public IActionResult whatisf1()
+        {
+            return View();
+        }
+        public IActionResult F1tv()
+        {
+            return View();
+        }
+        public IActionResult GetInvolved()
+        {
+            return View();
+        }
 
-        
+
     }
 }

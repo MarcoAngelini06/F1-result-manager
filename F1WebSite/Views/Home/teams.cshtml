@@ -14,12 +14,12 @@
 
 </head>
 <body>
-    <div class="Title">
+    <div class="driver-title">
         <h1>F1 2024</h1>
         <p>
             Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
         </p>
-        <button id="addTeamButton" class="addButton" onclick="togglePopup()">+</button> @* opens a pop-up with a form that asks the team info *@
+        <button id="addTeamButton" class="addButton" onclick="togglePopup()">Add a new team</button> @* opens a pop-up with a form that asks the team info *@
 
         <div id="myPopup" class="popup">
             <div class="popup-content">
@@ -34,36 +34,63 @@
         </div>
 
         <div class="overlay" onclick="closePopup()"></div>
-        
+
     </div>
 
     <div class="team-container">
-        @foreach (var teamGroup in Model.Drivers.GroupBy(d => d.teamId))
+        @{
+            var sortedTeams = Model.Drivers
+            .GroupBy(d => d.teamId) // Groups the drivers by their teamId
+            .Select(teamGroup => new // Creates a new object with team, drivers, and total points
+            {
+                Team = Model.Teams.FirstOrDefault(t => t.teamId == teamGroup.Key),
+                Drivers = teamGroup,
+                TotalPoints = Model.DriverTeams.Where(dt => dt.teamId == teamGroup.Key).Sum(dt => dt.points)
+            })
+            .OrderByDescending(t => t.TotalPoints) // Sorts teams by total points in descending order
+            .ToList(); // Materializes the result into a list
+        }
+
+
+        @foreach (var teamData in sortedTeams)
         {
-            try{
-                Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == teamGroup.Key);
+            var currentTeam = teamData.Team;
+            var teamGroup = teamData.Drivers;
+            int totPoints = teamData.TotalPoints;
+
+            try
+            {
                 var teamColor = currentTeam.teamColor;
                 <div class="team-card-container">
                     <a href="@Url.Action("DriverTeam", "Home", new { teamId = teamGroup.First().teamId })" class="team-card" style="--team-border-color: @teamColor;">
-                        <div class="team-header">
+                        <div class="team-header" style="--team-back-color: @teamColor;">
                             <h1>@currentTeam.TeamName</h1>
+                            <h1>@totPoints pt</h1>
                         </div>
 
                         <div class="team-drivers">
-                            @{
-                                bool isFirst = true;
-                            }
-                            @foreach (var driver in teamGroup)
+
+                            @{ bool isFirst = true;}
+
+                            @foreach (var driver in teamGroup.Take(2))
                             {
-                                <div class="driver">
-                                    <p>@driver.name @driver.surname</p>
-                                </div>
-                                @if (isFirst == true)
+                                if (driver.name != null)
                                 {
-                                    string teamNameForLogo = TeamCleaner(currentTeam.TeamName);
-                                    <img src="https://media.formula1.com/content/dam/fom-website/teams/2024/@teamNameForLogo-logo.png"
-                                         alt="team" class="team-logo" />
-                                    isFirst = false;
+                                    <div class="driver">
+                                        <p>@driver.name @driver.surname</p>
+                                    </div>
+                                    @if (isFirst)
+                                    {
+                                        string teamNameForLogo = TeamCleaner(currentTeam.TeamName);
+                                        string imageUrl = $"https://media.formula1.com/content/dam/fom-website/teams/2024/{teamNameForLogo}-logo.png";
+
+                                        <img src="@imageUrl"
+                                             alt="@currentTeam.TeamName Logo"
+                                             class="team-logo"
+                                             onerror="this.style.display='none';" />
+
+                                        isFirst = false;
+                                    }
                                 }
                             }
                         </div>
@@ -75,26 +102,22 @@
                             <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/@teamNameForIMG"
                                  alt="@teamGroup.Key Car" />
                         </div>
-
                     </a>
-                    @{
-                        if(currentTeam.isDeletable)
-                        {
-                            <input type="button" value="-" class="button"
-                                   onclick="location.href='@Url.Action("RemoveTeam", "Home", new { teamName = currentTeam.TeamName })'" />
-                        }
+
+                    @if (currentTeam.isDeletable)
+                    {
+                        <input type="button" value="-" class="button"
+                               onclick="location.href='@Url.Action("RemoveTeam", "Home", new { teamName = currentTeam.TeamName })'" />
                     }
-                    
                 </div>
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 throw new ApplicationException("current team set to NULL", e);
-
             }
-            
-            
         }
     </div>
+
     <script>
         function togglePopup() {
             document.getElementById("myPopup").style.display = "block";

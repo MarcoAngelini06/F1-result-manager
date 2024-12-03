@@ -1,45 +1,194 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - F1WebSite</title>
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/F1WebSite.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+
     <style>
-        a:hover
-        {
-            background-color:black;
+        
+        /* Hover effect on links */
+        a:hover {
+            background-color: black;
+        }
+
+        /* Button styles */
+        .button {
+            text-decoration: none;
+            color: grey;
+            border: solid 2px grey;
+            border-radius: 8px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 250px;
+        }
+
+            .button:hover {
+                border-color: red;
+            }
+
+        .nav-link:hover {
+            border-bottom: solid;
+            border-bottom-color: red;
         }
     </style>
 </head>
-<body >
+
+<body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid" style="background-color: red">
-                <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a href="https://localhost:44323/Home/">
-                            <img src="~/images/f1_logo.png" alt="F1 logo">
-                    </a>
-                </li>
-                </ul>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a href="https://localhost:44323/Home/" class="navbar-brand">
+                    <img src="https://easydrawings.net/wp-content/uploads/2022/09/How-to-draw-Formula-1-Logo-step-4.png" alt="F1 logo" height="100" width="130">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <!-- LATEST Dropdown -->
+                        <div class="dropdown">
+                            <button class="dropbtn">LATEST</button>
+                            <div class="dropdown-content">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <ul class="navbar-nav flex-grow-1">
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Latest">Latest</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="itsalltodrivefor">It's All To Drive For</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="whatisf1">What is F1?</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="F1tv">What is F1 TV?</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="GetInvolved">Get involved</a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:white; font-weight:bold;">
+                                            NEWS
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td style="color:white; font-weight:bold;">
+                                            TOPICS
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table style="color:white;">
+                                                <tr>
+                                                    <td><p1></p1></td>
+                                                    <td style="text-align:left">
+                                                        news
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_165,q_auto/t_16by9Centre/f_auto/q_auto/fom-website/2024/Qatar/Need_To_Know_Qatar_28112024" alt="Alternate Text" />
+                                                    </td>
+                                                    <td style="border-bottom:solid;border-bottom-width:3px; ">
+                                                        <p1>PALMER: Five vital qualities that made the difference in Verstappen’s title defence this season</p1>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p1></p1></td>
+                                                    <td style="text-align:left">
+                                                        news
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_165,q_auto/t_16by9Centre/f_auto/q_auto/fom-website/2024/Qatar/Formula%201%20header%20template%20-%202024-11-28T140140.515" alt="Alternate Text" />
+                                                    </td>
+                                                    <td style="border-bottom:solid;border-bottom-width:3px;">
+                                                        <p1>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the 2024 Qatar Grand Prix</p1>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p1></p1></td>
+                                                    <td style="text-align:left">
+                                                        news
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_165,q_auto/t_16by9Centre/f_auto/q_auto/fom-website/manual/Misc/F1%20digital%20race%20programmes/2024/qatar_1920x1080" alt="Alternate Text" />
+                                                    </td>
+                                                    <td style="border-bottom:solid;border-bottom-width:3px;">
+                                                        <p1>Formula 1 to race in Monza until 2031 with new six-year extension</p1>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://media.formula1.com/image/upload/f_auto/q_auto/v1678279482/content/dam/fom-website/Unlocked2023/Website%20Header%201920x1080_2.png);">
+                                                            <p1 style="padding-left:80px;">f1 unlocked</p1>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://media.formula1.com/image/upload/f_auto,c_limit,w_465,q_auto/f_auto/q_auto/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Las%20Vegas);">
+                                                            <p1 style="padding-left:80px;">Las Vegas</p1>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://www.formula1.it/admin/foto/williams-svelata-la-nuova-fw44-tutte-le-immagini-8612-21.jpg);">
+                                                            <p1 style="padding-left:90px;">Impact</p1>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://media.formula1.com/image/upload/f_auto,c_limit,w_465,q_auto/f_auto/q_auto/fom-website/2018-redesign-assets/Tag%20collections/Other/b%20guide%20copy);">
+                                                            <p1 style="padding-left:70px;">Beginner's guide</p1>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://media.formula1.com/image/upload/f_auto,c_limit,w_465,q_auto/f_auto/q_auto/content/dam/fom-website/2018-redesign-assets/Tag%20collections/Other/F1%20Academy);">
+                                                            <p1 style="padding-left:70px;">F1 academy</p1>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://localhost:44323/Home/F1Unlocked" class="button" style="color:white; background-image: url(https://media.formula1.com/image/upload/f_auto,c_limit,w_465,q_auto/f_auto/q_auto/content/dam/fom-website/2018-redesign-assets/Tag%20collections/Other/Driver_market);">
+                                                            <p1 style="padding-left:80px;">Driver Market</p1>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Video">Video</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="teams">Teams</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Latest">Latest</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Drivers">Drivers</a>
@@ -48,22 +197,19 @@
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="F1Unlocked">F1 Unlocked</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Results">Results</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="races">Races</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Races">Races</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="LiveTiming">Live Timing</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Schedule">Schedule</a>
-                        </li>
-                    </ul>
+                       
                 </div>
+                </ul>
+            </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -75,9 +221,12 @@
             &copy; 2024 - F1WebSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
