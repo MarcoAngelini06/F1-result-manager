@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/styleDriver.css">
 </head>
 <body>
-    <div class="driver-title">
+    <div class="F1-title">
         @{
             Team currentTeam = Model.Teams.FirstOrDefault(t => t.teamId == Model.Drivers.First().teamId);
         }
@@ -41,9 +41,11 @@
                     </div>
                     <div class="driver-image">
                         <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/@driver.surname"
-                             alt="@driver.name" />
+                        alt="@driver.name @driver.surname"
+                        class="team-logo"
+                        onerror="this.src='/img/Unknown_person.jpg'; this.onerror=null;" />
                     </div>
-                    <div class="driver-number">
+                    <div class="driver-info">
                         <p>@driver.Number</p>
                         <p>@currentTeam.TeamName</p>
                     </div>

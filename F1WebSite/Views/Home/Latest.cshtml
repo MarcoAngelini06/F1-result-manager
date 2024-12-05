@@ -1,3 +1,426 @@
 ﻿@{
     ViewData["Title"] = "Video";
 }
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+    <style>
+        /* Applica il font Offside a tutto il corpo */
+        body {
+            font-family: 'Offside', sans-serif;
+        }
+
+        .bordernews {
+            border: solid,gray;
+            border-radius: 10px;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            padding: 10px;
+            border-width: 1px;
+            padding-bottom: 50px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            font-size: small;
+        }
+
+            .bordernews:hover {
+                border-color: red;
+                border-left-color: transparent;
+                border-top-color: transparent;
+                padding-bottom: 70px;
+                font-size: medium;
+            }
+
+        .tablemigliorata {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        table img {
+            width: 100%; /* Adatta l'immagine alla larghezza della cella */
+            border-radius: 10px;
+        }
+
+        table button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        table button:hover {
+          background-color: #666;
+        }
+
+
+        .morenews:hover {
+           color: white;
+           background-color: #070612;
+        }
+
+            .morenews a {
+                color: black;
+                text-decoration: none;
+                 background-color: white;
+                 padding-bottom: 70px;
+                 border-bottom-right-radius: 15px;
+                 border-bottom-left-radius: 15px;
+            }
+
+                .morenews a:hover {
+                    color: white;
+                    background-color: #070612;
+                }
+        .link:hover{
+            background-color:transparent;
+        }
+     </style>
+</head>
+
+<body>
+    <!--TopStories-->
+    <center>
+        <h1 style="margin-top:30px;">
+            Editor's Picks
+        </h1>
+        <div style="border:solid;border-color:red;border-left-color:transparent; margin:40px;border-width:10px;border-radius:15px;margin-top:0px;">
+
+            <table class="tablemigliorata">
+                <tr>
+                    <td>
+                        <a class="link" asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none; color:black;">
+                            <div>
+                                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Las_Vegas___Practice/2186042826" alt="Alternate Text" />
+                            </div>
+                            <div class="bordernews">
+                                Video<br />
+                                WATCH: F1 for beginners – Everything you need to know about F1
+                            </div>
+                        </a>
+                       
+                    </td>
+                    <td>
+                        <table class="tablemigliorata" style="font-size:small">
+                            <tr>    
+                                <td>
+                                    <a class="link" asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none; color:black;">
+                                        <div>
+                                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Tech%20Weekly/tech_weekly_qatar_02122024" alt="Alternate Text" style="width:300px" />
+                                        </div>
+                                        <div class="bordernews">
+                                            FeatureF1 Unlocked <br />
+                                            MONDAY MORNING DEBRIEF: How <br />the Qatar GP ended up being far <br />better than damage limitation for <br />Ferrari
+                                        </div>
+                                    </a>
+                                        
+                                </td>
+                                <td>
+                                    <a class="link" asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none; color:black;">
+                                        <div>
+                                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar/2187725886" alt="Alternate Text" style="width:300px" />
+                                        </div>
+                                        <div class="bordernews">
+                                            Video<br />
+                                            HIGHLIGHTS: Relive the action from a <br />thrilling Qatar Grand Prix as <br />Verstappen wins ahead of Leclerc and <br />Piastri
+
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="link" asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none; color:black;">
+                                        <div class="bordernews">
+                                            Feature<br />
+                                            20 YEARS ON: The inside story of<br /> Lewis Hamilton’s first F1 test with<br /> McLaren
+                                        </div>
+                                    </a>
+
+                                </td>
+                               
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--More News-->
+        <div>
+            <h1 style="text-align:left;">
+                    More news
+            </h1>
+            <div style ="border-top:solid;border-top-color:black;border-top-width:10px;">
+                <table class="tablemigliorata">
+                    <tr>
+                        <td>
+                            <div class="morenews">
+                                <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none;">
+                                    <div>
+                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,g_faces,ar_16:9/fom-website/2024/Qatar/Albon%20and%20Colapinto%20Qatar" style="width:400px;" />
+                                    </div>
+                                    <div>
+                                        <h3 style="font-size:smaller">
+                                            News<br />
+                                            <br />
+                                            Gasly ‘gave absolutely everything’ to<br /> secure Qatar top-five finish as Alpine's <br />P6 hopes handed a boost
+                                        </h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="morenews">
+                                <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none;">
+                                    <div>
+                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Qatar/Formula%201%20header%20template%20(9)" style="width:400px;" />
+                                    </div>
+                                    <div>
+                                        <h3 style="font-size:smaller">
+                                            News<br />
+                                            <br />
+                                            Perez explains reasons behind his <br /> Qatar GP spin as promising start ended<br /> in retirement
+                                        </h3>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="morenews">
+                                <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none;">
+                                    <div>
+                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/F1%20Nation/F1N%20QATAR%20GP%20REVIEW%20ARTWORK%2016x9" style="width:400px;" />
+                                    </div>
+                                    <div>
+                                        <h3 style="font-size:smaller">
+                                            News<br />
+                                            <br />
+                                            Piastri reflects on ‘painful’<br /> Safety Car timing in Qatar as he prepares<br /> for constructors’ battle to ‘go down to the<br /> wire’
+                                        </h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--Drivermarket/analysis-->
+        <table class="tablemigliorata">
+            <tr>
+                <td>
+                    <div style="border-top:solid,black;">
+                        <h1>
+                            Driver Market
+                        </h1>
+                        <div>
+                            <table class="tablemigliorata">
+                                <tr>
+                                    <td>
+                                        <div class="morenews">
+                                            <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none">
+                                                <div>
+                                                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_Of_Singapore___Previews/2173069162" style="width:250px;" />
+                                                </div>
+                                                <div>
+                                                    <h3 style="font-size:smaller">
+                                                        News<br />
+                                                        <br />
+                                                        Gasly ‘gave absolutely everything’ to<br /> secure Qatar top-five finish as Alpine's <br />P6 hopes handed a boost
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="morenews">
+                                            <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none">
+                                                <div>
+                                                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Kick%20Sauber/Formula%201%20header%20template%20-%202024-11-07T144717.947" style="width:250px;" />
+                                                </div>
+                                                <div>
+                                                    <h3 style="font-size:smaller">
+                                                        News<br />
+                                                        <br />
+                                                        Perez explains reasons behind his <br /> Qatar GP spin as promising start ended<br /> in retirement
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div style="border-top:solid,black;">
+                        <h1>
+                            Analysis
+                        </h1>
+                        <div>
+                            <table class="tablemigliorata">
+                                <tr>
+                                    <td>
+                                        <div class="morenews">
+                                            <a asp-area="" asp-controller="Home" asp-action="Article" style="text-decoration:none">
+                                                <div>
+                                                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Alpine/Formula%201%20header%20template%20-%202024-12-02T123256.940" style="width:250px;" />
+                                                </div>
+                                                <div>
+                                                    <h3 style="font-size:smaller">
+                                                        News<br />
+                                                        <br />
+                                                        Gasly ‘gave absolutely everything’ to<br /> secure Qatar top-five finish as Alpine's <br />P6 hopes handed a boost
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="morenews">
+                                            <a asp-area ="" asp-controller="Home" asp-action="Article" style="text-decoration:none">
+                                                <div>
+                                                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9North,g_faces,ar_16:9/trackside-images/2024/F1_Grand_Prix_of_Qatar___Sprint__Qualifying/2187587065" style="width:250px;" />
+                                                </div>
+                                                <div>
+                                                    <h3 style="font-size:smaller">
+                                                        News<br />
+                                                        <br />
+                                                        Perez explains reasons behind his <br /> Qatar GP spin as promising start ended<br /> in retirement
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!--Technical-->
+        <div style="background-color: black; border-radius: 15px; padding: 20px; width: 100%; margin: 20px auto; display: flex; justify-content: space-between;color:white">
+            <div style="width: 75%;">
+               <h1 style="text-align:left;">
+                   Technical
+               </h1>
+                <div style="border:solid,gray;border-radius:15px;border-left-color:transparent;">
+                    <table>
+                        <tr>
+                            <td>
+                                <a asp-area="" asp-controller="Home" asp-action="Article" style="color:white;text-decoration:none;">
+                                    <div>
+                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Tech%20Weekly/Tech%20Weekly%20Las%20Vegas" alt="Alternate Text" style="width:500px" />
+                                    </div>
+                                    <div class="bordernews">
+                                        TechnicalF1 Unlocked<br />
+                                        TECH WEEKLY: How the top four teams reduced downforce in <br />Las Vegas – with different degrees of success
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-area ="" asp-controller="Home" asp-action="Article" style="color:white;text-decoration:none;">
+                                    <div>
+                                        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Tech%20Weekly/tech_weekly_19112024" alt="Alternate Text" style="width:350px" />
+                                    </div>
+                                    <div class="bordernews">
+                                        TechnicalF1 Unlocked<br />
+                                        TECH WEEKLY: The development that<br /> has reappeared after a 25-year<br /> absence – but what benefit does it<br /> bring?
+                                    </div>
+                                </a>
+                                <a asp-area ="" asp-controller="Home" asp-action="Article" style="color:white;text-decoration:none;">
+                                    <div class="bordernews" style="padding-top:15px;">
+                                        TechnicalF1 Unlocked<br />
+                                        TECH WEEKLY: The intriguing<br /> Mercedes upgrade that reinterprets<br /> an idea from 2022
+                                    </div>
+                               </a>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+            </div>
+            <div style="width: 25%;">
+                <h2 style="text-align:left;">
+                   Road to F1
+                </h2>
+                <a asp-area="" asp-controller="Home" asp-action="Article" style="color:white;text-decoration:none;">
+                    <div style=" padding:20px;">
+
+                        <div>
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_630,q_auto/f_auto,c_fill,q_auto,w_420,t_16by9Centre,g_faces,ar_16:9/fom-website/2024/Formula%202/GettyImages-2187697916" alt="Alternate Text" style="width:250px" />
+                        </div>
+                        <div class="bordernews">
+                            TechnicalF1 Unlocked<br />
+                            TECH WEEKLY: The development that<br /> has reappeared after a 25-year<br /> absence – but what benefit does it<br /> bring?
+                        </div>
+                    </div>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Article" style="color:white;text-decoration:none;">
+                    <div class="bordernews">
+                        TechnicalF1 Unlocked<br />
+                        TECH WEEKLY: The development that<br /> has reappeared after a 25-year<br /> absence – but what benefit does it<br /> bring?
+                    </div>
+                </a>
+            </div>   
+        </div>
+        <div style="background-color: #6A6169; border-radius: 15px; padding: 20px; width: 100%; margin: 20px auto; display: flex; flex-direction: column;">
+            <h3 style="color: white;" align="left">
+                Explore F1 topics
+            </h3>
+            <div style="display: flex; justify-content: center; margin-top: 20px; border:solid;border-left-color:transparent;border-bottom-color:transparent;border-top-right-radius:15px;">
+                <table style="text-align: center;">
+                    <tr>
+                        <td>
+                            <a class="link" href="https://www.formula1.com/en/latest/tags/red-bull-racing.3cMoP6kpSMgCeoAIaGsU0a">
+                                <button style="width: 260px; height: 120px; background-image: url('data:image/jpeg;base64,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'); background-size: cover; background-position: center; border: none; padding: 0; margin: 0 10px;">
+                                    Mclaren
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="link" href="https://www.formula1.com/en/latest/tags/red-bull-racing.3cMoP6kpSMgCeoAIaGsU0a">
+                                <button style="width: 260px; height: 120px; background-image: url('https://www.autohebdo.fr/app/uploads/2024/09/PETRONAS_Livery_WEB_3-753x494.webp'); background-size: cover; background-position: center; border: none; padding: 0; margin: 0 10px;">
+                                    Mercedes
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="link" href="https://www.formula1.com/en/latest/tags/red-bull-racing.3cMoP6kpSMgCeoAIaGsU0a">
+                                <button style="width: 260px; height: 120px; background-image: url('https://www.funoanalisitecnica.com/wp-content/uploads/2023/11/F_3qM2XWkAA4Tks.jpeg'); background-size: cover; background-position: center; border: none; padding: 0; margin: 0 10px;">
+                                    Red Bull Racing
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="link" href="https://www.formula1.com/en/latest/tags/ferrari.3dIkMVlv3iyaaScYu2OiYI">
+                                <button style="width:260px;height:120px; background-image: url('https://th.bing.com/th/id/OIP.4Gv6tD_tHRrMc_8IluU0DQHaEK?w=333&h=187&c=7&r=0&o=5&pid=1.7'); background-size: cover; background-position: center; border: none; padding: 0; margin: 0 10px;">
+                                    Ferrari
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+    </center>
+</body>

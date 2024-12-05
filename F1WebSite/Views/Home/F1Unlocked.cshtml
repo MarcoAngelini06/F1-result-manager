@@ -7,8 +7,158 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/F1Unlocked.css" asp-append-version="true" />
+    <style>
+        /* Apply Offside font to the whole body */
+        body {
+            font-family: 'Offside', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
 
+        .banner {
+            background-image: url('https://media.formula1.com/image/upload/f_auto/q_auto/v1678279482/content/dam/fom-website/Unlocked2023/Website%20Header%201920x1080_2.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 20px;
+            border-radius: 15px; /* Rounded corners for banner */
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for better visual effect */
+        }
+
+        .banner-title {
+            font-size: 60px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .banner-text {
+            font-size: small;
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+
+        button {
+            border: solid 2px red;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: red;
+                color: white;
+            }
+
+        .bannerbutton {
+            border: solid 2px lightgray;
+            color: lightgray;
+            background-color: transparent;
+        }
+
+            .bannerbutton:hover {
+                border-color: white;
+                color: white;
+                background-color: transparent;
+            }
+
+        /* Styling for the main content section */
+        .main-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-header {
+            font-size: 60px;
+            color: white;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .main-description {
+            font-size: small;
+            color: white;
+        }
+
+        /* Styling for the sections with tables */
+        .section-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+            .section-table td, .section-table th {
+                padding: 15px;
+            }
+
+            .section-table th {
+                background-color: #fff; /* Remove gray background */
+                text-align: left;
+            }
+
+            .section-table td {
+                font-size: small;
+            }
+
+        /* Section header and content inside tables */
+        .section-title {
+            font-size: xx-large;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            font-size: small;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            border: solid 2px red;
+            border-radius: 5px;
+            background-color: transparent;
+            color: red;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+            .cta-button:hover {
+                background-color: red;
+                color: white;
+            }
+
+        /* Footer */
+        .footer-message {
+            font-size: large;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-box {
+            background-color: white;
+            border: solid;
+            border-width: 2px;
+            border-radius: 10px;
+            border-color: lightgray;
+            padding: 20px;
+        }
+
+        .footer-text {
+            font-size: small;
+            color: gray;
+        }
+
+        /* Style for images inside the table */
+        .section-table img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 40px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for better visual effect */
+        }
+
+    </style>
 </head>
 
 <body>

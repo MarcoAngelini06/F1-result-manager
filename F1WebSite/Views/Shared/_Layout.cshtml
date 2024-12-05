@@ -6,40 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - F1WebSite</title>
 
-    <!-- CSS Files -->
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/F1WebSite.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
 
-    <style>
-        
-        /* Hover effect on links */
-        a:hover {
-            background-color: black;
-        }
-
-        /* Button styles */
-        .button {
-            text-decoration: none;
-            color: grey;
-            border: solid 2px grey;
-            border-radius: 8px;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            height: 100px;
-            width: 250px;
-        }
-
-            .button:hover {
-                border-color: red;
-            }
-
-        .nav-link:hover {
-            border-bottom: solid;
-            border-bottom-color: red;
-        }
-    </style>
 </head>
 
 <body>
@@ -47,7 +19,7 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid" style="background-color: red">
                 <a href="https://localhost:44323/Home/" class="navbar-brand">
-                    <img src="https://easydrawings.net/wp-content/uploads/2022/09/How-to-draw-Formula-1-Logo-step-4.png" alt="F1 logo" height="100" width="130">
+                    <img id="f1Logo"src="~/img/f1_logo.png" alt="F1 logo" height="100" width="130">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
@@ -216,11 +188,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - F1WebSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
